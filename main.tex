@@ -1,13 +1,15 @@
-\documentclass[twocolumn]{book}
-\usepackage[UTF8]{ctex}
+%!TEX program = xelatex
+\documentclass[a4paper,twocolumn]{ctexbook}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{mathrsfs}
-\usepackage{autobreak}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{titletoc}
+\usepackage{parskip}
+
+\setlength{\parindent}{0cm}
+\setCJKmainfont{FZSSJW--GB1-0}
 
 \newcommand\rsx[1]{\left.{#1}\vphantom{\Big|}\right|}
 \DeclareMathOperator{\sinc}{sinc}
@@ -19,7 +21,7 @@
 \DeclareMathSymbol{\Sh}{\mathord}{mcy}{"58} 
 \allowdisplaybreaks
 
-\title{Fourier Analysis}
+\title{傅立叶分析}
 \author{郭子睿}
 \date{\today}
 
@@ -27,9 +29,9 @@
 \maketitle
 \tableofcontents
 
-\input{chap1}
-\input{chap2}
-\input{chap3}
-\input{chap4}
+\include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap4}
 
 \end{document}

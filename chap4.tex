@@ -1,11 +1,12 @@
-\section{Discrete Fourier Transform}
+\chapter{离散傅立叶变换}
+\section{离散傅立叶变换}
 欢迎从连续的、模拟的旧世界，来到离散的、数字的新世界！！！
 
-$f(t)$为连续的Signal，即$t$是一个连续变量：
+$f(t)$为连续的信号，即$t$是一个连续变量：
 \begin{enumerate}
 	\item 找到一种合理的离散逼近$f(t)$的形式；
-	\item 找到一种合理的离散的逼近$f(t)$的Fourier Transform $\mathcal{F}f(s)$的形式；
-	\item 找到一种从$f$的离散形式到Fourier Transform $\mathcal{F}f$的离散形式的合理方法。
+	\item 找到一种合理的离散的逼近$f(t)$的傅立叶变换 $\mathcal{F}f(s)$的形式；
+	\item 找到一种从$f$的离散形式到傅立叶变换 $\mathcal{F}f$的离散形式的合理方法。
 \end{enumerate}
 
 下面的推导将建立在抽样定理的误用上：
@@ -16,7 +17,7 @@ $f(t)$为连续的Signal，即$t$是一个连续变量：
 
 为什么称之为误用基于两个原因：
 \begin{enumerate}
-	\item 我们知道Frequency Domain上的带宽是$-B\leq s\leq B$这种形式，但是这里为了方便后面的推导，采用了上方的这种形式。
+	\item 我们知道频域上的带宽是$-B\leq s\leq B$这种形式，但是这里为了方便后面的推导，采用了上方的这种形式。
 	\item 实际上这两个假设并不能同时成立，信号不可能同时在时域和频域上都受限。
 \end{enumerate}
 
@@ -39,7 +40,7 @@ $f(t)$为连续的Signal，即$t$是一个连续变量：
 
 采样得到的项分离出$f(t)$的离散近似为：$f(t_0),f(t_1),\cdots,f(t_{N-1})$
 
-但是采样后的$f$仍然是一个连续函数，我们可以对其进行Fourier Transform：
+但是采样后的$f$仍然是一个连续函数，我们可以对其进行傅立叶变换：
 $$
 	\mathcal{F}f_{sample}(s)=\sum\limits_{k=0}^{N-1}\ f(t_k)\cdot e^{-2\cdot \pi\cdot i\cdot s\cdot t_k}
 $$
@@ -47,19 +48,19 @@ $$
 	就像泰勒级数可以在某一点展开一样，这里只是在$t=t_k$处展开。所以我们说采样后的$f$仍然是一个连续函数。
 \end{quote}
 \subsection{$\mathcal{F}f(s)$的离散近似}
-为了离散化$\mathcal{F}f_{sample}(s)$，我们需要在Frequency Domain进行采样。
+为了离散化$\mathcal{F}f_{sample}(s)$，我们需要在频域进行采样。
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{assets/DFT2.png}
 \end{figure}
-关于采样，Signal的采样频率是依据该Signal在另一个域的性质决定的。
+关于采样，信号的采样频率是依据该信号在另一个域的性质决定的。
 \begin{enumerate}
-	\item 我们在Time Domain采样时依据它在Frequency Domain受限于$[0,2\cdot B]$；
-	\item 而在Frequency Domain采样是依据它在Time Domain受限于$[0,L]$，即采样间隔为$\frac{1}{L}$。
+	\item 我们在时域采样时依据它在频域受限于$[0,2\cdot B]$；
+	\item 而在频域采样是依据它在时域受限于$[0,L]$，即采样间隔为$\frac{1}{L}$。
 \end{enumerate}
 
 
-设$\mathcal{F}f(s)$上共有$M$个采样点，即：$M\cdot \frac{1}{L}=2\cdot B$，则：$M=2\cdot B\cdot L=N$。我们发现，Time Domain与Frequency Domain上的采样点数目一样多。
+设$\mathcal{F}f(s)$上共有$M$个采样点，即：$M\cdot \frac{1}{L}=2\cdot B$，则：$M=2\cdot B\cdot L=N$。我们发现，时域与频域上的采样点数目一样多。
 
 令$s_0=0,s_1=\frac{1}{L},\cdots,s_{N-1}=\frac{N-1}{L}$。我们对$\mathcal{F}f_{sample}(s)$进行采样，得：
 \begin{align*}
@@ -69,7 +70,7 @@ $$
 	= & \sum\limits_{k,m=0}^{N-1}\ f(t_k)\cdot e^{-2\cdot \pi\cdot i\cdot s_m\cdot t_k}\cdot \delta(s-s_m)
 \end{align*}
 
-Frequency Domain上的采样值为：
+频域上的采样值为：
 \begin{align*}
 	\mathcal{F}f(s_0)     & =\sum\limits_{k=0}^{N-1}\ f(t_k)\cdot e^{-2\cdot \pi\cdot i\cdot s_0\cdot t_k}     \\
 	\mathcal{F}f(s_1)     & =\sum\limits_{k=0}^{N-1}\ f(t_k)\cdot e^{-2\cdot \pi\cdot i\cdot s_1\cdot t_k}     \\
@@ -96,18 +97,15 @@ $$
 	t_k\cdot s_m=\frac{k\cdot m}{2\cdot B\cdot L}=\frac{k\cdot m}{N}
 $$
 
-我们有离散Signal $\underline{f}=(\underline{f}[0],\underline{f}[1],\cdots,\underline{f}[N-1])$，它的Discrete Fourier Transform是离散Signal $\underline{\mathcal{F}f}=(\underline{\mathcal{F}f}[0],\underline{\mathcal{F}f}[1],\cdots,\underline{\mathcal{F}f}[N-1])$则：
+我们有离散信号 $\underline{f}=(\underline{f}[0],\underline{f}[1],\cdots,\underline{f}[N-1])$，它的离散 傅立叶变换是离散信号 $\underline{\mathcal{F}f}=(\underline{\mathcal{F}f}[0],\underline{\mathcal{F}f}[1],\cdots,\underline{\mathcal{F}f}[N-1])$则：
 \begin{equation}
 	\underline{\mathcal{F}f}[m]=\sum\limits_{k=0}^{N-1}\ \underline{f}[k]\cdot e^{-2\cdot \pi\cdot i\cdot \frac{m\cdot k}{N}}
 \end{equation}
 
-我们可以把离散Signal看作一个Vector。
-\section{对得到的Discrete Fourier Transform公式化简}
-\subsection{Time Domain和Frequency Domain的Reciprocity Relationship}
-设有一连续Signal在Time Domain与Frequency Domain同时受限，
-Time Domain与Frequency Domain都有$N$个采样点（上节课已推导过，Time Domain与Frequency Domain抽样点的数目是一样的），
-Time Domain采样间隔为$\Delta t$，Frequency Domain采样间隔为$\Delta s$，
-根据不同的$\Delta t$与$\Delta s$可以采集到不同的$\underline{f}$，与$\underline{\mathcal{F}f}$。
+我们可以把离散信号看作一个向量。
+\section{对得到的离散傅立叶变换公式化简}
+\subsection{时域和频域的倒数关系}
+设有一连续信号在时域与频域同时受限，时域与频域都有$N$个采样点。时域采样间隔为$\Delta t$，频域采样间隔为$\Delta s$，根据不同的$\Delta t$与$\Delta s$可以采集到不同的$\underline{f}$，与$\underline{\mathcal{F}f}$。
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{assets/DFT3.png}
@@ -118,13 +116,12 @@ $$
 	\Delta t\cdot \Delta s=\frac{L}{N}\cdot \frac{2\cdot B}{N}=\frac{2\cdot B\cdot L}{N^2}=\frac{N}{N\cdot N}=\frac{1}{N}
 $$
 
-Time Domain的采样间隔和Frequency Domain的采样间隔会根据抽样点数成倒数关系（reciprocity relationship）。
-这该关系对于进行Discrete Fourier Transform很有现实意义。
+时域的采样间隔和频域的采样间隔会根据抽样点数成倒数关系。这该关系对于进行离散 傅立叶变换很有现实意义。
 
-当我们确定好Time Domain的采样间隔$\Delta t$与抽样点数$N$时，Frequency Domain的采样间隔$\Delta s$就被固定了，即Frequency Domain分辨率是由Time Domain所做的选择而确定的。
-\subsection{引入新符号$\underline{\omega}$}
+当我们确定好时域的采样间隔$\Delta t$与抽样点数$N$时，频域的采样间隔$\Delta s$就被固定了，即频域分辨率是由时域所做的选择而确定的。
+\subsection{引入新符号}
 
-令$\underline{\omega}$为离散的复指数Signal（或为复指数Vector），且：
+令$\underline{\omega}$为离散的复指数信号（或为复指数向量），且：
 \begin{align*}
 	\underline{\omega}    & =(1,e^{-2\cdot \pi\cdot i\cdot\frac{1}{N}},e^{-2\cdot \pi\cdot i\cdot\frac{2}{N}},\cdots,e^{-2\cdot \pi\cdot i\cdot\frac{N-1}{N}}) \\
 	\underline{\omega}[m] & =e^{-2\cdot \pi\cdot i\cdot\frac{m}{N}}
@@ -139,7 +136,7 @@ Time Domain的采样间隔和Frequency Domain的采样间隔会根据抽样点�
 	  & \underline{\omega}^{-n}[m] =  e^{-2\cdot \pi\cdot i\cdot\frac{-m\cdot n}{N}}
 \end{align*}
 
-把它代入到Discrete Fourier Transform中，则有：
+把它代入到离散 傅立叶变换中，则有：
 $$
 	\underline{\mathcal{F}f}[m]=\sum\limits_{n=0}^{N-1}\ \underline{f}[n]\cdot e^{-2\cdot \pi\cdot i\cdot\frac{m\cdot n}{N}}=\sum\limits_{n=0}^{N-1}\ \underline{f}[n]\cdot \underline{\omega}^{-n}[m]
 $$
@@ -148,20 +145,22 @@ $$
 \begin{equation}
 	\underline{\mathcal{F}f}=\sum\limits_{n=0}^{N-1}\ \underline{f}[n]\cdot \underline{\omega}^{-n}
 \end{equation}
-\section{Discrete Fourier Transform特性}
+\section{离散 傅立叶变换特性}
 \subsection{输入和输出的周期性}
-Discrete Fourier Transform的定义迫使我们把输入$\underline{f}$与输出$\underline{\mathcal{F}f}$不仅当作定义在$0$到$N-1$整数上的，并且是周期为$N$的周期离散函数。
+离散傅立叶变换的定义迫使我们把输入$\underline{f}$与输出$\underline{\mathcal{F}f}$不仅当作定义在$0$到$N-1$整数上的，并且是周期为$N$的周期离散函数。周期性在后面证明。
 
 
 \subsection{离散复指数的正交性}
-%TODO:在普通的Fourier Transform中的复指数也是有正交性
+%TODO:在普通的傅立叶变换中的复指数也是有正交性
 \begin{align*}
 	\underline{\omega}   & =(1,e^{-2\cdot \pi\cdot i\cdot\frac{1}{N}},e^{-2\cdot \pi\cdot i\cdot\frac{2}{N}},\cdots,e^{-2\cdot \pi\cdot i\cdot\frac{N-1}{N}})                 \\
 	\underline{\omega}^n & =(1,e^{-2\cdot \pi\cdot i\cdot\frac{n}{N}},e^{-2\cdot \pi\cdot i\cdot\frac{2\cdot n}{N}},\cdots,e^{-2\cdot \pi\cdot i\cdot\frac{(N-1)\cdot n}{N}}) \\
 \end{align*}
 
 如果$k\neq l$，则有$\underline{\omega}^k$与$\underline{\omega}^l$是正交的。
-这里不把$\underline{\omega}$当作离散Signal，而是把它当作$N$维Vector，我们在讨论Fourier Series复指数的时候引入了正交，这里可谓是它的离散版本，即如果$k\neq l$：
+这里不把$\underline{\omega}$当作离散信号，而是把它当作$N$维向量，我们在讨论傅立叶级数复指数的时候引入了正交，这里可谓是它的离散版本，即：
+
+如果$k\neq l$：
 \begin{align*}
 	  & \underline{\omega}^k\cdot \underline{\omega}^l                                                                                       \\
 	= & \sum\limits_{n=0}^{N-1}\ \underline{\omega}^k[n]\cdot \overline{\underline{\omega}^l[n]}                                             \\
@@ -191,8 +190,28 @@ Discrete Fourier Transform的定义迫使我们把输入$\underline{f}$与输出
 	\end{cases}
 \end{equation}
 
-当$l\neq k$时，$\underline{\omega}^k$与$\underline{\omega}^l$是正交的，但是他们并不是标准正交，因为$\Vert \underline{\omega}^k\Vert=\underline{\omega}^k\cdot \underline{\omega}^k=N$而不是$1$.因此右式为了归一化为标准正交Vector，会把$N$引入到$\underline{\omega}$中。
-\section{Inverse Discrete Fourier Transform}
+当$l\neq k$时，$\underline{\omega}^k$与$\underline{\omega}^l$是正交的，但是他们并不是标准正交，因为$\Vert \underline{\omega}^k\Vert=\underline{\omega}^k\cdot \underline{\omega}^k=N$而不是$1$.因此右式为了归一化为标准正交向量，会把$N$引入到$\underline{\omega}$中。
+\section{离散傅立叶逆变换}
+
+离散傅立叶逆变换有公式如下：
+\begin{equation}
+	\underline{\mathcal{F}^{-1}f}[m] = \displaystyle{ \frac{1}{N}\sum_{n=0}^{N-1}\underline{f}[n]e^{2\pi i \frac{mn}{N}} = \frac{1}{N}\sum_{n=0}^{N-1}\underline{f}[n]\underline{\omega}^n[m] }
+\end{equation}
+
+省略序号$m$，有：
+\begin{equation}
+	\underline{\mathcal{F}^{-1}f} = \displaystyle{ \frac{1}{N}\sum_{n=0}^{N-1}\underline{f}[n]\underline{\omega}^n }
+\end{equation}
+
+离散傅立叶逆变换的职责是把进行来离散傅立叶变换的离散信号复原，即：
+\begin{equation}
+	\underline{\mathcal{F}^{-1}\mathcal{F}f} = \underline{f}
+\end{equation}
+\begin{equation}
+	\underline{\mathcal{F}^{-1}\mathcal{F}f}[m] = \underline{f}[m]
+\end{equation}
+
+证明过程需要用到$\underline{\omega}$的正交性质：
 \begin{align*}
 	  & \mathcal{F}^{-1}\mathcal{F}f[m]                                                                                                                                                              \\
 	= & \frac{1}{N}\cdot \sum\limits_{n=0}^{N-1}\ \underline{\mathcal{F}f}[n]\cdot e^{2\cdot \pi\cdot i\cdot \frac{m\cdot n}{N}}                                                                     \\
@@ -207,13 +226,14 @@ Discrete Fourier Transform的定义迫使我们把输入$\underline{f}$与输出
 \end{align*}
 
 有$\frac{1}{N}$的原因是，离散复指数是正交的，但不是标准正交的。
-\section{Discrete Fourier Transform的性质}
-\subsection{Discrete Fourier Transform在零点}
+
+\section{离散傅立叶变换的性质}
+\subsection{离散傅立叶变换在零点}
 $$
 	\underline{\mathcal{F}f}(0)=\sum\limits_{n=0}^{N-1}\ \underline{f}[n]\cdot e^{2\cdot \pi\cdot i\cdot \frac{0\cdot n}{N}}=\sum\limits_{n=0}^{N-1}\ \underline{f}[n]
 $$
 
-类比到Fourier Transform：
+类比到傅立叶变换：
 $$
 	\mathcal{F}f(0)=\int_{-\infty}^\infty\ f(t)\cdot e^{2\cdot \pi\cdot i\cdot 0\cdot t}\ dt=\int_{-\infty}^\infty\ f(t)\ dt
 $$
@@ -224,7 +244,7 @@ $$\underline{1}=(1,1,\cdots,1)$$
 \subsubsection{$\underline{\delta_0}$}
 $$\underline{\delta_0}=(1,0,\cdots,0)$$
 
-对其进行Discrete Fourier Transform：
+对其进行离散 傅立叶变换：
 \begin{align*}
 	  & \underline{\mathcal{F}}\underline{\delta_0}                                   \\
 	= & \sum\limits_{n=0}^{N-1}\ \underline{\delta_0}[n]\cdot \underline{\omega}^{-n} \\
@@ -241,7 +261,7 @@ $$\underline{\delta_0}=(1,0,\cdots,0)$$
 \subsubsection{$\underline{\delta_k}$}
 $$\underline{\delta_k}=(0,0,\cdots,1,0,\cdots,0)$$
 
-对其进行Discrete Fourier Transform：
+对其进行离散 傅立叶变换：
 \begin{align*}
 	  & \mathcal{F}\delta_k                                               \\
 	= & \sum\limits_{n=0}^{N-1}\ \delta_k[n]\cdot \underline{\omega}^{-n} \\
@@ -270,14 +290,14 @@ $$\underline{\delta_k}=(0,0,\cdots,1,0,\cdots,0)$$
 	\underline{\mathcal{F}}\underline{\omega}^k=N\cdot \underline{\delta_k}
 \end{equation}
 
-\section{Discrete Fourier Transform Matrix}
+\section{离散 傅立叶变换 矩阵}
 \subsection{定义}
 一般的$\omega$表示为：
 $$
 	\omega=e^{\frac{-2\cdot\pi}{N}}
 $$
 
-Discrete Fourier Transform的变换式可以写成：
+离散 傅立叶变换的变换式可以写成：
 $$
 	\underline{\mathcal{F}f}[m]=\sum\limits_{n=0}^{N-1}\ \omega^{-m\cdot n}\cdot \underline{f}[n]
 $$
@@ -292,7 +312,7 @@ $$
 	\underline{\omega}^{-n}[m]=e^{-2\cdot\pi\cdot\frac{ n\cdot m}{N}}
 $$
 
-上式呈现了一种新的表述，即对离散信号$\underline{f}$进行Discrete Fourier Transform就相当于用$\underline{f}$与酉矩阵$(\omega^-)^{m\cdot n}$相乘：
+上式呈现了一种新的表述，即对离散信号$\underline{f}$进行离散 傅立叶变换就相当于用$\underline{f}$与酉矩阵$(\omega^-)^{m\cdot n}$相乘：
 \begin{align*}
 	  & \left[
 		\begin{matrix}
@@ -324,12 +344,12 @@ $$
 		\right]
 \end{align*}
 
-上述式子左边的矩阵就是Discrete Fourier Transform Matrix，Discrete Fourier Transform Matrix是一个$N\times N$的酉矩阵，可以用下面的式子表达：
+上述式子左边的矩阵就是离散 傅立叶变换 矩阵，离散 傅立叶变换 矩阵是一个$N\times N$的酉矩阵，可以用下面的式子表达：
 \begin{equation}
 	(\mathcal{F})_{m\cdot n}=\omega^{-m\cdot n}
 \end{equation}
-\subsection{转置共轭与Inverse Discrete Fourier Transform矩阵}
-对Discrete Fourier Transform Matrix  $\mathcal{F}$进行共轭转置，即：
+\subsection{转置共轭与Inverse 离散 傅立叶变换矩阵}
+对离散 傅立叶变换 矩阵  $\mathcal{F}$进行共轭转置，即：
 \begin{quote}
 	（酉矩阵的逆矩阵与其伴随矩阵相等
 	% 复指数的正交性\\
@@ -339,7 +359,7 @@ $$
 	(\mathcal{F}^{*})_{n\times m} = \overline{(\underline{\mathcal{F}})_{m\times n}} = \overline{\omega^{-m\times n}} = \omega^{m\times n}
 \end{align*}
 
-Discrete Fourier Transform矩阵与它的共轭转置矩阵相乘，有：
+离散 傅立叶变换矩阵与它的共轭转置矩阵相乘，有：
 \begin{align*}
 	      & \underline{\mathcal{F}}\cdot \underline{\mathcal{F}}^{*} \\
 	=     &
@@ -393,7 +413,7 @@ Discrete Fourier Transform矩阵与它的共轭转置矩阵相乘，有：
 	\underline{\mathcal{F}}^{*}\cdot \underline{\mathcal{F}}=N\cdot I
 \end{equation}
 
-通过上面的推导，我们可以可以得到Inverse Discrete Fourier Transform矩阵为：
+通过上面的推导，我们可以可以得到Inverse 离散 傅立叶变换矩阵为：
 \begin{equation}
 	\underline{\mathcal{F}}^{-1} = \frac{1}{N}\underline{\mathcal{F}}^{*}
 \end{equation}
@@ -402,15 +422,15 @@ Discrete Fourier Transform矩阵与它的共轭转置矩阵相乘，有：
 \begin{equation}
 	\left( \underline{\mathcal{F}}^{-1} \right)_{m\times n} = \frac{1}{N}\omega^{m\times n}
 \end{equation}
-这个结果同样也能运用推导Discrete Fourier Transform矩阵的过程得出。
+这个结果同样也能运用推导离散 傅立叶变换矩阵的过程得出。
 
 \subsection{运算复杂度}
 这里是指矩阵运算中乘法运算的数目，$\underline{\mathcal{F}f}$的每一项运算会花费$N$个乘法运算，其中共有$N$项，即运算复杂度为$N\times N$，用$O(N^2)$表示。
 
-Fast Fourier Transform算法的目的就是为了减少Discrete Fourier Transform的运算复杂度，Fast Fourier Transform的复杂度为$O(NlogN)$。
-\section{Discrete Fourier Transform特性}
+快速 傅立叶变换算法的目的就是为了减少离散 傅立叶变换的运算复杂度，快速 傅立叶变换的复杂度为$O(NlogN)$。
+\section{离散 傅立叶变换特性}
 \subsection{输入与输出离散信号周期性的证明}
-Discrete Fourier Transform的输入和输出都具有均具有周期性，周期为$N$。
+离散 傅立叶变换的输入和输出都具有均具有周期性，周期为$N$。
 
 如果我们把$\omega$表示在复平面上，它在圆上转圈圈：
 \begin{figure}[H]
@@ -420,7 +440,7 @@ Discrete Fourier Transform的输入和输出都具有均具有周期性，周期
 \end{figure}
 
 我们取$\underline{\omega}[m] =e^{2\pi i \frac{m}{N}} $。
-\subsubsection{Discrete Fourier Transform Matrix中}
+\subsubsection{离散 傅立叶变换 矩阵中}
 \begin{align*}
 	  & \underline{\omega}[m+N]               \\
 	= & e^{2\pi i\frac{m+N}{N}}               \\
@@ -437,7 +457,7 @@ Discrete Fourier Transform的输入和输出都具有均具有周期性，周期
 即$\underline{\omega},\underline{\omega}^n,\underline{\omega}^{-n}$都是周期为$N$的离散复指数信号。
 
 
-由上述结论推广到Discrete Fourier Transform：
+由上述结论推广到离散 傅立叶变换：
 \begin{align*}
 	  & \underline{\mathcal{F}f}[m+N]                                \\
 	= & \sum_{n=0}^{N-1}\underline{f}[n]\underline{\omega}^{-n}[m+N]
@@ -445,29 +465,29 @@ Discrete Fourier Transform的输入和输出都具有均具有周期性，周期
 	= & \underline{\mathcal{F}f}[m]
 \end{align*}
 
-因此$\underline{\mathcal{F}f}[m+N] = \underline{\mathcal{F}f}[m]$，表明了对离散信号$\underline{f}$进行Discrete Fourier Transform后会得到周期为$N$的离散信号。
+因此$\underline{\mathcal{F}f}[m+N] = \underline{\mathcal{F}f}[m]$，表明了对离散信号$\underline{f}$进行离散 傅立叶变换后会得到周期为$N$的离散信号。
 
-\subsubsection{Inverse Discrete Fourier Transform Matrix}
+\subsubsection{Inverse 离散 傅立叶变换 矩阵}
 
-同理，推广到Inverse Discrete Fourier Transform：
+同理，推广到Inverse 离散 傅立叶变换：
 \begin{align*}
 	  & \underline{\mathcal{F}}^{-1}\underline{f}[m+N]                                                                                                \\
 	= & \frac{1}{N}\sum_{n=0}^{N-1}\underline{f}[n]\underline{\omega}^{n}[m+N]= \frac{1}{N}\sum_{n=0}^{N-1}\underline{f}[n]\underline{\omega}^{-n}[m] \\
 	= & \underline{\mathcal{F}}^{-1}\underline{f}[m]
 \end{align*}
 
-因此$\underline{\mathcal{F}}^{-1}\underline{f}[m+N] = \underline{\mathcal{F}}^{-1}\underline{f}[m]$，表明了对离散信号$\underline{f}$进行Inverse Discrete Fourier Transform会得到周期为$N$的离散信号。
+因此$\underline{\mathcal{F}}^{-1}\underline{f}[m+N] = \underline{\mathcal{F}}^{-1}\underline{f}[m]$，表明了对离散信号$\underline{f}$进行Inverse 离散 傅立叶变换会得到周期为$N$的离散信号。
 \subsubsection{总结}
-这种周期为$N$的特性是由$\underline{\omega}$的周期性决定的。对某离散信号$\underline{f}$进行Discrete Fourier Transform，会得到周期为$N$的离散信号$\underline{\mathcal{F}f}$，然后对$\underline{\mathcal{F}f}$进行Inverse Discrete Fourier Transform，即$\underline{\mathcal{F}^{-1}\mathcal{F}f}$，也会得到周期为$N$的离散信号$\underline{f}$，这表明了原始信号$\underline{f}$也是周期为$N$的离散信号。
+这种周期为$N$的特性是由$\underline{\omega}$的周期性决定的。对某离散信号$\underline{f}$进行离散 傅立叶变换，会得到周期为$N$的离散信号$\underline{\mathcal{F}f}$，然后对$\underline{\mathcal{F}f}$进行Inverse 离散 傅立叶变换，即$\underline{\mathcal{F}^{-1}\mathcal{F}f}$，也会得到周期为$N$的离散信号$\underline{f}$，这表明了原始信号$\underline{f}$也是周期为$N$的离散信号。
 
-因此有结论如下：进行Discrete Fourier Transform的输入离散信号$\underline{f}$与输出离散信号$\underline{\mathcal{F}f}$都是周期为$N$（$N$项）的周期信号；同理进行Inverse Discrete Fourier Transform的输入离散信号$\underline{F}$与输出离散信号$\underline{\mathcal{F}^{-1}\mathcal{F}}$都是周期为$N$（$N$项）的周期信号。
+因此有结论如下：进行离散 傅立叶变换的输入离散信号$\underline{f}$与输出离散信号$\underline{\mathcal{F}f}$都是周期为$N$（$N$项）的周期信号；同理进行Inverse 离散 傅立叶变换的输入离散信号$\underline{F}$与输出离散信号$\underline{\mathcal{F}^{-1}\mathcal{F}}$都是周期为$N$（$N$项）的周期信号。
 
-% 一开始测量得到的抽样值，必须可以延拓为一系列重复的图像。在离散情况下产生的某些现象，在连续情况下并不存在。原始信号是完全没有周期性的，但是对于有限个测量值的集合情况就不同了。利用Fourier Transform分析，必须使信号具有周期性。在信号没有显示出周期性的情况下，变换会产生周期性。
+% 一开始测量得到的抽样值，必须可以延拓为一系列重复的图像。在离散情况下产生的某些现象，在连续情况下并不存在。原始信号是完全没有周期性的，但是对于有限个测量值的集合情况就不同了。利用傅立叶变换分析，必须使信号具有周期性。在信号没有显示出周期性的情况下，变换会产生周期性。
 
 \subsection{索引的独立性}
-周期性可以说是限制，因为我们需要用周期信号来看待将被进行Decrete Fourier Transform、IDecrete Fourier Transform的离散信号，但是这个特性也带来了简单有益的结论：索引的独立性（independence of indexing）。
+周期性可以说是限制，因为我们需要用周期信号来看待将被进行离散 傅立叶变换、I离散 傅立叶变换的离散信号，但是这个特性也带来了简单有益的结论：索引的独立性（independence of indexing）。
 
-由于$\underline{f}$与$\underline{\omega}$都具有周期性，因此在计算Decrete Fourier Transform时可以采用任意连续$N$个采样，即：
+由于$\underline{f}$与$\underline{\omega}$都具有周期性，因此在计算离散 傅立叶变换时可以采用任意连续$N$个采样，即：
 
 \begin{align*}
 	\underline{\mathcal{F}f} =  \sum_{n=0}^{N-1}\underline{f}[n]\underline{\omega}^{-n} = \sum_{n=1}^{N}\underline{f}[n]\underline{\omega}^{-n}
@@ -489,7 +509,7 @@ Discrete Fourier Transform的输入和输出都具有均具有周期性，周期
 \end{align*}
 
 在连续的情况下，我们总是考虑对称性，但是在离散的情况下，我们对对称性就没有那么看重了，我们看重的是周期性。
-\subsection{离散信号的反转及其Decrete Fourier Transform的对偶性}
+\subsection{离散信号的反转及其离散 傅立叶变换的对偶性}
 \subsubsection{离散信号反转的定义}
 在讨论连续信号的反转的时候，连续信号$f(x)$的反转为$f^-(x) = f(-x)$，而这里离散信号的反转被定义为$\underline{f}^{-}[m] = \underline{f}[-m]$，也就是说，如果有离散信号：
 \begin{align*}
@@ -511,12 +531,12 @@ Discrete Fourier Transform的输入和输出都具有均具有周期性，周期
 	\left(\underline{\omega}^n \right)^-    & = \underline{\omega}^{-n} \\
 	\left(\underline{\omega}^{-n} \right)^- & = \underline{\omega}^{n}
 \end{align*}
-\subsubsection{Decrete Fourier Transform对偶性讨论}
-对离散信号$\underline{f}$的反转$\underline{f}^-$进行Decrete Fourier Transform：
+\subsubsection{离散 傅立叶变换对偶性讨论}
+对离散信号$\underline{f}$的反转$\underline{f}^-$进行离散 傅立叶变换：
 \begin{align*}
 	  & \underline{\mathcal{F}f}^-                                                                                \\
 	= & \sum_{n=0}^{N-1}\underline{f}^-[n]\underline{\omega}^{-n}                                                 \\
-	= & \sum_{n=0}^{N-1}\underline{f}[-n]\underline{\omega}^{-n}    \quad (definition\ of\ reversed\ signal)      \\
+	= & \sum_{n=0}^{N-1}\underline{f}[-n]\underline{\omega}^{-n}    \quad (definition\ of\ reversed\ 信号)        \\
 	= & \sum_{n=0}^{N-1}\underline{f}[N-n]\underline{\omega}^{-n}   \quad (\underline{f}\ is\ period\ of\ N)      \\
 	= & \sum_{l=N}^1\underline{f}[l]\underline{\omega}^{l-N}        \quad (letting\ l=N-n)                        \\
 	= & \sum_{l=N}^1\underline{f}[l]\underline{\omega}^l            \quad (\underline{\omega}\ is\ period\ of\ N) \\
@@ -532,7 +552,7 @@ Discrete Fourier Transform的输入和输出都具有均具有周期性，周期
 	\underline{\mathcal{F}f}^- = \left( \underline{\mathcal{F}f} \right)^-
 \end{equation}
 
-对离散信号连续进行两次Decrete Fourier Transform：
+对离散信号连续进行两次离散 傅立叶变换：
 \begin{align*}
 	  & \underline{\mathcal{F}}\underline{\mathcal{F}f}                                                                                                                                                             \\
 	= & \sum_{k=0}^{N-1}\left(\sum_{n=0}^{N-1}\underline{f}[n]\underline{\omega}^{-n}[k]\right)\underline{\omega}^{-k}                                                                                              \\
@@ -554,19 +574,20 @@ $$
 因此：
 
 \begin{align*}
-	  & \underline{\mathcal{F}}\underline{\mathcal{F}f}                                                                                                                                                  \\
-	= & N\left(\sum_{n=0}^{N-1}\underline{f}[n]\underline{\delta_n}[0],\sum_{n=0}^{N-1}\underline{f}[n]\underline{\delta_n}[1],\cdots,\sum_{n=0}^{N-1}\underline{f}[n]\underline{\delta_n}[N-1]\right)^- \\
-	= & N\left(\underline{f}[0],\underline{f}[1],\cdots,\underline{f}[N-1]\right )^-                                                                                                                     \\
+	  & \underline{\mathcal{F}\mathcal{F}f}                                                                                      \\
+	= & N\cdot (\sum_{n=0}^{N-1}\underline{f}[n]\underline{\delta_n}[0],\sum_{n=0}^{N-1}\underline{f}[n]\underline{\delta_n}[1], \\
+	  & \cdots,\sum_{n=0}^{N-1}\underline{f}[n]\underline{\delta_n}[N-1])^-                                                      \\
+	= & N\cdot (\underline{f}[0],\underline{f}[1],\cdots,\underline{f}[N-1])^-                                                   \\
 	= & N\underline{f}^-
 \end{align*}
 
 最终得：
 \begin{equation}
-	\underline{\mathcal{F}}\underline{\mathcal{F}f} = N\underline{f}^-
+	\underline{\mathcal{F}\mathcal{F}f} = N\cdot \underline{f}^-
 \end{equation}
 
-\section{Fast Fourier Transform}
-Discrete Fourier Transform矩阵运算中主要的计算量（乘法计算量）为$N \times N$，用$O(N^2)$表示，而Fast Fourier Transform可以将计算量降到$N\cdot \log{N}$。
+\section{快速傅立叶变换}
+离散傅立叶变换矩阵运算中主要的计算量（乘法计算量）为$N \times N$，用$O(N^2)$表示，而快速 傅立叶变换可以将计算量降到$N\cdot \log{N}$。
 \subsection{矩阵简化}
 \begin{align*}
 	\Bigg[F_{64}\Bigg]=\begin{bmatrix}
@@ -590,7 +611,7 @@ Discrete Fourier Transform矩阵运算中主要的计算量（乘法计算量）
 我们分开来看等式右侧的这三个矩阵：
 
 \subsection{利用复指数的代数性质}
-我们把和写成一个分成奇偶指数的和的形式。我们试着把一个$N$阶的Discrete Fourier Transform转换成两个$\frac{N}{2}$阶Discrete Fourier Transform的组合。
+我们把和写成一个分成奇偶指数的和的形式。我们试着把一个$N$阶的离散 傅立叶变换转换成两个$\frac{N}{2}$阶离散 傅立叶变换的组合。
 
 要做到这一点，你需要假设$N$是偶数；为了继续，你需要假设$N$是$2$的乘方。
 \subsubsection{引入$\omega[p,q]$}
@@ -635,10 +656,10 @@ Discrete Fourier Transform矩阵运算中主要的计算量（乘法计算量）
 	= & e^{-2\cdot \pi\cdot  i\frac{\frac{N}{2}}{N}} \\
 	= & e^{-\pi\cdot  i} = -1
 \end{align*}
-\subsubsection{把Discrete Fourier Transform公式表达成奇偶项的形式}
-接下来就是把上述关于$\omega$的奇偶等式代入到Discrete Fourier Transform公式。
+\subsubsection{把离散 傅立叶变换公式表达成奇偶项的形式}
+接下来就是把上述关于$\omega$的奇偶等式代入到离散 傅立叶变换公式。
 
-首先来回顾一下Discrete Fourier Transform公式：
+首先来回顾一下离散 傅立叶变换公式：
 $$
 	\underline{\mathcal{F}f}[m] =  \sum_{n=0}^{N-1}\underline{f}[n]\omega[N,-n\cdot m]
 $$
@@ -656,12 +677,12 @@ $$
 	+ & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n+1]\omega[N,-(2\cdot n+1)\cdot m]
 \end{align*}
 
-我们后面会继续按照这种奇偶项的分解方法一直进行下去，这就要求$N$必须为2的某次方（$N=2^k$）,但是在实际的Discrete Fourier Transform应用中，可能会出现$N$不为$2^k$的情况，在这种情况下我们就需要在后面补$0$。
+我们后面会继续按照这种奇偶项的分解方法一直进行下去，这就要求$N$必须为2的某次方（$N=2^k$）,但是在实际的离散 傅立叶变换应用中，可能会出现$N$不为$2^k$的情况，在这种情况下我们就需要在后面补$0$。
 \begin{align*}
 	\underline{f} = (\underbrace{ \underline{f}[0],\underline{f}[1],\cdots,\underline{f}[N-1],0,0,\cdots,0 }_{2^k\ entries} )
 \end{align*}
 
-有了上述条件，我们回到Discrete Fourier Transform公式的分解推导，
+有了上述条件，我们回到离散 傅立叶变换公式的分解推导，
 \begin{align*}
 	  & \underline{\mathcal{F}f}                                                                     \\
 	= & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\omega[N,-2\cdot n\cdot m]                  \\
@@ -672,14 +693,14 @@ $$
 	+ & \omega[N,-m]\sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n+1]\omega[\frac{N}{2},-n\cdot m]
 \end{align*}
 
-我们来分析一下上述推导结果，上式的奇偶两个大项，基本上可以被当作单独的Discrete Fourier Transform。其中：
+我们来分析一下上述推导结果，上式的奇偶两个大项，基本上可以被当作单独的离散 傅立叶变换。其中：
 \begin{enumerate}
 	\item 每个大项的离散数据有$\frac{N}{2}$个；
 	\item 求和从$0$到$\frac{N}{2}-1$；
 	\item $\omega[\frac{N}{2},-n\cdot m] = e^{-2\pi i\frac{n\cdot m}{\frac{N}{2}}}$中的复指数分母也由$N$替换成了$\frac{N}{2}$。
 \end{enumerate}
 
-但是其中还有一点瑕疵，因为Discrete Fourier Transform是有多少个输入就会有多少个输出：$\underline{f}$有$N$个输入，则$\underline{\mathcal{F}f}$有$N$个输出，也就是说$m =0,1,\cdots,N-1$；但是$\sum\limits_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\omega[\frac{N}{2},-n\cdot m]$只有$\frac{N}{2}$个输入，也只应该有$\frac{N}{2}$个输出，也就是说$m= 0,1,\cdots,\frac{N}{2}-1$，这就与原来的Discrete Fourier Transform定义相悖了。因此我们可以遵照以下规定：
+但是其中还有一点瑕疵，因为离散 傅立叶变换是有多少个输入就会有多少个输出：$\underline{f}$有$N$个输入，则$\underline{\mathcal{F}f}$有$N$个输出，也就是说$m =0,1,\cdots,N-1$；但是$\sum\limits_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\omega[\frac{N}{2},-n\cdot m]$只有$\frac{N}{2}$个输入，也只应该有$\frac{N}{2}$个输出，也就是说$m= 0,1,\cdots,\frac{N}{2}-1$，这就与原来的离散 傅立叶变换定义相悖了。因此我们可以遵照以下规定：
 \begin{align*}
 	  & \underline{\mathcal{F}_N f}[m]                                                                                                             \\
 	= & \left( \underline{\mathcal{F}_{\frac{N}{2}}f}_{even} \right)[m]+\omega[N,-m]\left( \underline{\mathcal{F}_{\frac{N}{2}}f}_{odd} \right)[m] \\
@@ -714,7 +735,7 @@ $$
 \begin{enumerate}
 	\item 把输入$\underline{f}$分成偶数与奇数两个序列$\underline{f}_{even}$，$\underline{f}_{odd}$；
 	\item 把$\underline{f}_{even}$，$\underline{f}_{odd}$当作单一的输入，分别计算他们的$\underline{\mathcal{F}}_{\frac{N}{2}}\underline{f}_{even}$，$\underline{\mathcal{F}}_{\frac{N}{2}}\underline{f}_{odd}$；
-	\item 通过把$\underline{\mathcal{F}}_{\frac{N}{2}}\underline{f}_{even}$，$\underline{\mathcal{F}}_{\frac{N}{2}}\underline{f}_{odd}$按照下列式子的方式结合起来，可以分别得到$\underline{\mathcal{F}}\underline{f}$的前后半部分：
+	\item 通过把$\underline{\mathcal{F}}_{\frac{N}{2}}\underline{f}_{even}$，$\underline{\mathcal{F}}_{\frac{N}{2}}\underline{f}_{odd}$按照下列式子的方式结合起来，可以分别得到$\underline{\mathcal{F}f}$的前后半部分：
 
 	      \begin{align*}
 		      \underline{\mathcal{F}}_N\underline{f}[m] & = \left( \underline{\mathcal{F}}_{\frac{N}{2}}\underline{f}_{even} \right)[m]+\omega[N,-m]\left( \underline{\mathcal{F}}_{\frac{N}{2}}\underline{f}_{odd} \right)[m] \\
@@ -724,7 +745,7 @@ $$
 \end{enumerate}
 
 
-前文推导出的这段计算虽然不能算Fast Fourier Transform的全貌，却包含了Fast Fourier Transform的主要思想：把一个完整的Discrete Fourier Transform二分成偶数项$\underline{f}_{even}$以及奇数项$\underline{f}_{odd}$的Discrete Fourier Transform的组合，然后又再继续对$\underline{f}_{even}$与$\underline{f}_{odd}$继续二分，直到最终剩下两项。
+前文推导出的这段计算虽然不能算快速 傅立叶变换的全貌，却包含了快速 傅立叶变换的主要思想：把一个完整的离散 傅立叶变换二分成偶数项$\underline{f}_{even}$以及奇数项$\underline{f}_{odd}$的离散 傅立叶变换的组合，然后又再继续对$\underline{f}_{even}$与$\underline{f}_{odd}$继续二分，直到最终剩下两项。
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{assets/FFT.png}

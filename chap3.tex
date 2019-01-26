@@ -1,14 +1,15 @@
-\section{传统Fourier Transform所存在的问题}
-\subsection{传统Fourier Transform所存在的问题}
+\chapter{广义傅立叶变换}
+\section{传统傅立叶变换所存在的问题}
+\subsection{传统傅立叶变换所存在的问题}
 \begin{enumerate}
-	\item Fourier Transform基于积分的收敛；
-	\item Inverse Fourier Transform必须可行，否则尽管Fourier Transform被执行了也毫无意义。
+	\item 傅立叶变换基于积分的收敛；
+	\item Inverse 傅立叶变换必须可行，否则尽管傅立叶变换被执行了也毫无意义。
 \end{enumerate}
 \subsection{问题例子}
 \subsubsection{例子1}
 令$f(t)=\Pi(t)$
 \begin{enumerate}
-	\item Fourier Transform公式法计算
+	\item 傅立叶变换公式法计算
 	      \begin{align*}
 		      \mathcal{F}\Pi        & =\sinc                                  \\
 		      \mathcal{F}^{-1}\sinc & =\mathcal{F}^{-1}\mathcal{F}\Pi=\pi     \\
@@ -22,9 +23,9 @@
 	      \end{align*}
 \end{enumerate}
 
-在Fourier Transform公式法计算中，我们能很轻松地运用傅里叶的逆变换、对偶等定理得到结果。
+在傅立叶变换公式法计算中，我们能很轻松地运用傅里叶的逆变换、对偶等定理得到结果。
 
-但是在实际应用中我们对Signal进行傅里叶转换并处理后，通常需要用积分方法进行计算后去获得原始的Signal，而积分方法的第二三个式子的积分求法是非常困难的。
+但是在实际应用中我们对信号进行傅里叶转换并处理后，通常需要用积分方法进行计算后去获得原始的信号，而积分方法的第二三个式子的积分求法是非常困难的。
 
 另外，在计算的时候还必须面对一些函数的收敛性问题——由于$\Pi$函数是跳跃的，最终积分运算得到的$\Pi$会在跳变点$\pm \frac{1}{2}$处取值为$\frac{1}{2}\cdot (0+1)$。
 \subsubsection{例子2}
@@ -39,7 +40,7 @@
 
 对于这些不收敛的函数的积分是无意义的。
 \section{Schwartz Space}
-定义最适合Fourier Transform的函数$\mathcal  {S}$，我们称之为速降函数。
+定义最适合傅立叶变换的函数$\mathcal  {S}$，我们称之为速降函数。
 \subsection{定义}
 $f(x)$是无限可微的，对于任何$m,n\geq 0$，都有：
 $$
@@ -48,11 +49,11 @@ $$
 
 这个式子表明：$f(t)$的任意阶导数趋于$0$的速度都比$t$的任意次方上升的速度快。
 \subsection{性质}
-因为速降函数有如下性质，所以速降函数是Fourier Transform的最佳函数：
+因为速降函数有如下性质，所以速降函数是傅立叶变换的最佳函数：
 \begin{enumerate}
 	\item 如果$f(t)\in \mathcal  {S}$，那么$\mathcal{F}f(t)\in \mathcal  {S}$；
 	\item 如果$f(t)\in \mathcal  {S}$，那么$\mathcal{F}^{-1}f(t)\in \mathcal  {S}$；
-	\item 正负Fourier Transform：
+	\item 正负傅立叶变换：
 	      \begin{align*}
 		      \mathcal{F}\mathcal{F}^{-1}f=f \\
 		      \mathcal{F}^{-1}\mathcal{F}f=f
@@ -63,7 +64,7 @@ $\Pi\notin \mathcal  {S}$，因为不连续；$\Lambda\notin \mathcal  {S}$，�
 
 \section{Parserval等式}
 \begin{quote}
-	该等式在Fourier Transform中被称为Railey's Identity，在Fourier Series中被称为Parserval's Identity。
+	该等式在傅立叶变换中被称为Railey's Identity，在傅立叶级数中被称为Parserval's Identity。
 \end{quote}
 \subsection{定义}
 设有$f(x),g(x)\in \mathcal  {S}$，则：
@@ -71,14 +72,14 @@ $\Pi\notin \mathcal  {S}$，因为不连续；$\Lambda\notin \mathcal  {S}$，�
 	\int_{-\infty}^{\infty}\ |\mathcal{F}f(s)|^2\ ds=\int_{-\infty}^{\infty}\ |f(x)|^2\ dx
 \end{equation}
 \begin{enumerate}
-	\item 左边：$\mathcal  {S}$函数進行Fourier Transform仍爲$\mathcal  {S}$函数，因此左边收敛；
+	\item 左边：$\mathcal  {S}$函数進行傅立叶变换仍爲$\mathcal  {S}$函数，因此左边收敛；
 	\item 右边：对于$\mathcal  {S}$函数不用担心积分收敛问题，因为它们衰减很快，积分必然收敛。
 \end{enumerate}
 \subsection{注解}
 \begin{enumerate}
 	\def\labelenumi{\arabic{enumi}.}
 	\item
-	      Signal在Time Domain与Frequency Domain的能量相等；
+	      信号在时域与频域的能量相等；
 	\item
 	      设有$f(t),g(t)\in \mathcal  {S}$，则：
 
@@ -157,9 +158,9 @@ $$
 	f\cdot \delta_a=f(a)\cdot \delta_a
 \end{equation}
 \subsection{$\delta$的平移特性}
-该式子证明利用到了分布的Convolution性质。
+该式子证明利用到了分布的卷积性质。
 
-\subsection{函数$f$与$\delta_a$进行Convolution}
+\subsection{函数$f$与$\delta_a$进行卷积}
 \begin{align*}
 	  & <f*\delta_a,\phi>                                              \\
 	= & <f(x),<\delta_a(y),\phi(x+y)>>                                 \\
@@ -168,7 +169,7 @@ $$
 	= & <f(u-a),\phi>
 \end{align*}
 
-$f$与$\delta_a$进行Convolution会导致$f$右移$a$个单位：
+$f$与$\delta_a$进行卷积会导致$f$右移$a$个单位：
 \begin{equation}
 	f(x)*\delta_a=f(x-a)
 \end{equation}
@@ -178,7 +179,7 @@ $f$与$\delta_a$进行Convolution会导致$f$右移$a$个单位：
 	\delta_a*\delta_b=\delta_{a+b}
 \end{equation}
 \subsection{$\delta$的缩放特性}
-该式子证明利用到了分布的Convolution性质。
+该式子证明利用到了分布的卷积性质。
 
 $\delta(x)$是集中于一点的脉冲函数，因此按照我们主观的印象来说，无论怎么在$x$轴对其缩放，都还是原来的脉冲函数，但是事实并不是这样的，我们可以观察下面的推理过程。
 
@@ -211,7 +212,7 @@ $\delta(x)$是集中于一点的脉冲函数，因此按照我们主观的印象
 \section{分布}
 这里的分布不同于概率上的分布，它是广义函数（generalized function）的另一种说法。
 \subsection{测试函数$\phi$}
-对于当前研究是最优函数。对于Fourier Transform来说，最优函数就是速降函数。
+对于当前研究是最优函数。对于傅立叶变换来说，最优函数就是速降函数。
 \subsection{广义函数Generalized Function}
 跟这些测试函数相关的，我们称之为广义函数或者分布。
 
@@ -247,19 +248,19 @@ The distribution $T$ is a linear functional on test functions.
 
 
 
-\section{分布Fourier Transform}
+\section{分布傅立叶变换}
 \subsection{缓增函数}
-在Fourier Transform中，测试函数$\phi$为速降函数。与之对应的分布$T$通常被称为缓增函数（Tempered Distributions）:
+在傅立叶变换中，测试函数$\phi$为速降函数。与之对应的分布$T$通常被称为缓增函数（Tempered Distributions）:
 $$
 	<T,\phi>=\int_{-\infty}^{\infty}\ T(x)\cdot \phi(x)\ dx
 $$
-\subsection{缓增函数的Fourier Transform}
+\subsection{缓增函数的傅立叶变换}
 \subsubsection{定义}
-定义缓增分布$T$的Fourier Transform为$\mathcal{F}T$，$\mathcal{F}T$作用于速降函数$\phi$就相当于$T$作用于速降函数的Fourier Transform $\mathcal{F}\phi$：
+定义缓增分布$T$的傅立叶变换为$\mathcal{F}T$，$\mathcal{F}T$作用于速降函数$\phi$就相当于$T$作用于速降函数的傅立叶变换 $\mathcal{F}\phi$：
 \begin{equation}
 	<\mathcal{F}T,\phi>=<T,\mathcal{F}\phi>
 \end{equation}
-同理可得，分布的Inverse Fourier Transform为:
+同理可得，分布的Inverse 傅立叶变换为:
 \begin{equation}
 	<\mathcal{F}^{-1}T,\phi>=<T,\mathcal{F}^{-1}\phi>
 \end{equation}
@@ -274,7 +275,7 @@ $$
 \end{align*}
 
 因为$\phi\in \mathcal  {S}$，所以$\mathcal{F}\phi\in \mathcal  {S}$，因此$<T,\mathcal{F}\phi>$是有意义的。至于$<\mathcal{F}T,\phi>$有没有意义，nobody cares。
-\subsection{分布Fourier Transform的例子}
+\subsection{分布傅立叶变换的例子}
 \subsubsection{$\mathcal{F}\sigma$}
 \begin{align*}
 	  & <\mathcal{F}\sigma,\phi>  =  <\sigma,\mathcal{F}\phi>                          \\
@@ -292,7 +293,7 @@ $$
 	\centering
 	\includegraphics[width=0.4\textwidth]{assets/fdelta.png}
 \end{figure}
-在$\sigma$的定义中，我们知道$\sigma$无限集中于$0$点，我们通过$\Pi$函数的极限形式来逼近它。而它的傅里叶变换为$1$，这是均匀散开的。还记得我们曾经在讨论傅里叶缩放的时候讲过——Time Domain的集中会导致Frequency Domain的分散，这就是一个极端的例子。
+在$\sigma$的定义中，我们知道$\sigma$无限集中于$0$点，我们通过$\Pi$函数的极限形式来逼近它。而它的傅里叶变换为$1$，这是均匀散开的。还记得我们曾经在讨论傅里叶缩放的时候讲过——时域的集中会导致频域的分散，这就是一个极端的例子。
 \subsubsection{$\mathcal{F}\sigma_a$}
 \begin{align*}
 	  & <\mathcal{F}\sigma_a,\phi>  =  <\sigma_a,\mathcal{F}\phi>                      \\
@@ -322,7 +323,7 @@ $$
 	\centering
 	\includegraphics[width=0.4\textwidth]{assets/fe.png}
 \end{figure}
-当$a=0$时，$e^{2\cdot \pi\cdot i\cdot a\cdot x}=1$，则$\mathcal{F}1=\sigma$。$f(x)=1$的傅里叶变换为$\sigma$，这是一个Time Domain分散导致Frequency Domain集中的极端例子。
+当$a=0$时，$e^{2\cdot \pi\cdot i\cdot a\cdot x}=1$，则$\mathcal{F}1=\sigma$。$f(x)=1$的傅里叶变换为$\sigma$，这是一个时域分散导致频域集中的极端例子。
 \subsubsection{$\mathcal{F}\cos(2\cdot\pi\cdot a\cdot x)$}
 \begin{align*}
 	  & \mathcal{F}\cos(2\cdot\pi\cdot a\cdot x)                                                                         \\
@@ -362,8 +363,8 @@ $$
 \end{equation}
 
 由速降函数可知，速降函数的任意阶导都比$x$的任意次幂衰减地都快，即速降函数的任意阶导都是速降函数。因此$\phi'\in \mathcal  {S}$，$<T,\phi'>$仍然成立。
-\subsubsection{分布Fourier Transform的导数定理}
-分布Fourier Transform的导数定理与Fourier Transform的导数定理类似，注意下面等式中的$s$与$t$：
+\subsubsection{分布傅立叶变换的导数定理}
+分布傅立叶变换的导数定理与傅立叶变换的导数定理类似，注意下面等式中的$s$与$t$：
 \begin{equation}
 	\mathcal{F}(T')=2\cdot\pi\cdot i\cdot s\cdot \mathcal{F}T
 \end{equation}
@@ -434,21 +435,21 @@ $$
 	= & \frac{2}{2\cdot\pi\cdot i\cdot s}=\frac{1}{\pi\cdot i\cdot s} \\
 \end{align*}
 
-\subsection{利用导数求Fourier Transform}
-\subsubsection {$\sgn$的Fourier Transform}
+\subsection{利用导数求傅立叶变换}
+\subsubsection {$\sgn$的傅立叶变换}
 \begin{align*}
 	  & \mathcal{F}(\sgn)                                             \\
 	= & \frac{\mathcal{F}(\sgn')}{2\cdot\pi\cdot i\cdot s}            \\
 	= & \frac{2\cdot \delta}{2\cdot\pi\cdot i\cdot s}                 \\
 	= & \frac{2}{2\cdot\pi\cdot i\cdot s}=\frac{1}{\pi\cdot i\cdot s} \\
 \end{align*}
-\subsubsection {$U$的Fourier Transform}
+\subsubsection {$U$的傅立叶变换}
 \begin{align*}
 	U            & =\frac{1}{2}\cdot(1+\sgn)                                                                  \\
 	\mathcal{F}U & =\frac{1}{2}\cdot \mathcal{F}(1+\sgn)=\frac{1}{2}\cdot(\sigma+\frac{1}{\pi\cdot i\cdot s})
 \end{align*}
 
-在高通滤波器中会用到$U$（单位跃阶）这个Signal，采用$U$的Fourier Transform将会加快处理过程。
+在高通滤波器中会用到$U$（单位跃阶）这个信号，采用$U$的傅立叶变换将会加快处理过程。
 
 
 
@@ -461,9 +462,9 @@ $$
 	= & \int_{-\infty}^{\infty}\ T(x)\cdot f(x)\cdot \phi(x)\ dx \\
 	= & <T,f\cdot \phi>
 \end{align*}
-\section{分布与Convolution}
-\subsection{分布的Convolution}
-假设有函数$f$与速降函数$\psi$，他们的Convolution为$f*\psi$：
+\section{分布与卷积}
+\subsection{分布的卷积}
+假设有函数$f$与速降函数$\psi$，他们的卷积为$f*\psi$：
 \begin{align*}
 	  & <\psi*f,\phi>                                                                                  \\
 	= & \int_{-\infty}^{\infty}\ (\psi*f)(x)\cdot \phi(x)\ dx                                          \\
@@ -482,7 +483,7 @@ $$
 	= & <\psi(u),\phi(u+y)>
 \end{align*}
 
-把推导结果代入Convolution的推导中，得：
+把推导结果代入卷积的推导中，得：
 $$
 	<\psi*f,\phi>=<f(x),<\psi(y),\phi(x+y)>>
 $$
@@ -492,11 +493,11 @@ $$
 	<S*T,\phi>=<S(x),<T(y),\phi(x+y)>>
 \end{equation}
 
-分布Convolution成立的条件如下：
+分布卷积成立的条件如下：
 
 $<T(y),\phi(x+y)>$将产生一个变量为$x$的函数，只有当该函数为测试函数时，$S*T$才有意义。
-\subsection{分布的Convolution定理}
-我们在分析传统Fourier Transform的Convolution定理的时候，是结合Convolution与Fourier Transform一起讨论的。在分布中，通常也会把Convolution与Fourier Transform一起讨论。
+\subsection{分布的卷积定理}
+我们在分析传统傅立叶变换的卷积定理的时候，是结合卷积与傅立叶变换一起讨论的。在分布中，通常也会把卷积与傅立叶变换一起讨论。
 \begin{align*}
 	  & <\mathcal{F}(S*T),\phi>                     \\
 	= & <S*T,\mathcal{F}\phi>                       \\
@@ -511,4 +512,4 @@ $<T(y),\phi(x+y)>$将产生一个变量为$x$的函数，只有当该函数为�
 \begin{equation}
 	\mathcal{F}(S*T)=\mathcal{F}S\cdot \mathcal{F}T
 \end{equation}
-该定理成立的条件与Convolution成立的条件一致，即$T^−$与速降函数进行Convolution后仍然是速降函数。
+该定理成立的条件与卷积成立的条件一致，即$T^−$与速降函数进行卷积后仍然是速降函数。
