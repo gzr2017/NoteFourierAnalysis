@@ -1,0 +1,1 @@
+F_n=\begin{bmatrix}1&1&1&\cdots&1\\1&\omega &\omega ^2&\cdots&\omega ^{N-1}\\1&\omega ^2&\omega ^4&\cdots&\omega ^{2(N-1)}\\\vdots&\vdots&\vdots&\ddots&\vdots\\1&\omega ^{N-1}&\omega ^{2(N-1)}&\cdots&\omega ^{(N-1)^2}\end{bmatrix}

@@ -233,6 +233,8 @@ $$
 	\underline{\mathcal{F}f}(0)=\sum\limits_{n=0}^{N-1}\ \underline{f}[n]\cdot e^{2\cdot \pi\cdot i\cdot \frac{0\cdot n}{N}}=\sum\limits_{n=0}^{N-1}\ \underline{f}[n]
 $$
 
+我们可以看到，在零点处的离散傅立叶变换就是是将所有离散信号相加。
+
 类比到傅立叶变换：
 $$
 	\mathcal{F}f(0)=\int_{-\infty}^\infty\ f(t)\cdot e^{2\cdot \pi\cdot i\cdot 0\cdot t}\ dt=\int_{-\infty}^\infty\ f(t)\ dt
@@ -314,7 +316,7 @@ $$
 
 上式呈现了一种新的表述，即对离散信号$\underline{f}$进行离散 傅立叶变换就相当于用$\underline{f}$与酉矩阵$(\omega^-)^{m\cdot n}$相乘：
 \begin{align*}
-	  & \left[
+	      & \left[
 		\begin{matrix}
 			1      & 1               & 1                     & \cdots & 1                     \\
 			1      & \omega^{-1}     & \omega^{-2}           & \cdots & \omega^{-(N-1)}       \\
@@ -322,8 +324,8 @@ $$
 			\vdots & \vdots          & \vdots                & \vdots & \vdots                \\
 			1      & \omega^{-(N-1)} & \omega^{-2\cdot(N-1)} & \cdots & \omega^{-(N-1)^2}     \\
 		\end{matrix}
-		\right]
-	\cdot
+		\right]        \\
+	\cdot &
 	\left[
 		\begin{matrix}
 			\underline{f}[0]   \\
@@ -332,8 +334,8 @@ $$
 			\vdots             \\
 			\underline{f}[N-1] \\
 		\end{matrix}
-		\right]    \\
-	= & \left[
+		\right]
+	=  \left[
 		\begin{matrix}
 			\underline{\mathcal{F}f}[0]   \\
 			\underline{\mathcal{F}f}[1]   \\
@@ -348,18 +350,14 @@ $$
 \begin{equation}
 	(\mathcal{F})_{m\cdot n}=\omega^{-m\cdot n}
 \end{equation}
-\subsection{转置共轭与Inverse 离散 傅立叶变换矩阵}
-对离散 傅立叶变换 矩阵  $\mathcal{F}$进行共轭转置，即：
-\begin{quote}
-	（酉矩阵的逆矩阵与其伴随矩阵相等
-	% 复指数的正交性\\
-	% 离散复指数的正交性\\
-\end{quote}
+\subsection{转置共轭与离散傅立叶逆变换矩阵}
+对离散傅立叶变换矩阵  $\mathcal{F}$进行共轭转置（酉矩阵的逆矩阵与其伴随矩阵相等），即：
+
 \begin{align*}
 	(\mathcal{F}^{*})_{n\times m} = \overline{(\underline{\mathcal{F}})_{m\times n}} = \overline{\omega^{-m\times n}} = \omega^{m\times n}
 \end{align*}
 
-离散 傅立叶变换矩阵与它的共轭转置矩阵相乘，有：
+离散傅立叶变换矩阵与它的共轭转置矩阵相乘，有：
 \begin{align*}
 	      & \underline{\mathcal{F}}\cdot \underline{\mathcal{F}}^{*} \\
 	=     &
@@ -413,7 +411,7 @@ $$
 	\underline{\mathcal{F}}^{*}\cdot \underline{\mathcal{F}}=N\cdot I
 \end{equation}
 
-通过上面的推导，我们可以可以得到Inverse 离散 傅立叶变换矩阵为：
+通过上面的推导，我们可以可以得到离散傅立叶逆变换矩阵为：
 \begin{equation}
 	\underline{\mathcal{F}}^{-1} = \frac{1}{N}\underline{\mathcal{F}}^{*}
 \end{equation}
@@ -467,20 +465,20 @@ $$
 
 因此$\underline{\mathcal{F}f}[m+N] = \underline{\mathcal{F}f}[m]$，表明了对离散信号$\underline{f}$进行离散 傅立叶变换后会得到周期为$N$的离散信号。
 
-\subsubsection{Inverse 离散 傅立叶变换 矩阵}
+\subsubsection{离散傅立叶逆变换矩阵}
 
-同理，推广到Inverse 离散 傅立叶变换：
+同理，推广到离散傅立叶逆变换：
 \begin{align*}
 	  & \underline{\mathcal{F}}^{-1}\underline{f}[m+N]                                                                                                \\
 	= & \frac{1}{N}\sum_{n=0}^{N-1}\underline{f}[n]\underline{\omega}^{n}[m+N]= \frac{1}{N}\sum_{n=0}^{N-1}\underline{f}[n]\underline{\omega}^{-n}[m] \\
 	= & \underline{\mathcal{F}}^{-1}\underline{f}[m]
 \end{align*}
 
-因此$\underline{\mathcal{F}}^{-1}\underline{f}[m+N] = \underline{\mathcal{F}}^{-1}\underline{f}[m]$，表明了对离散信号$\underline{f}$进行Inverse 离散 傅立叶变换会得到周期为$N$的离散信号。
+因此$\underline{\mathcal{F}}^{-1}\underline{f}[m+N] = \underline{\mathcal{F}}^{-1}\underline{f}[m]$，表明了对离散信号$\underline{f}$进行离散傅立叶逆变换会得到周期为$N$的离散信号。
 \subsubsection{总结}
-这种周期为$N$的特性是由$\underline{\omega}$的周期性决定的。对某离散信号$\underline{f}$进行离散 傅立叶变换，会得到周期为$N$的离散信号$\underline{\mathcal{F}f}$，然后对$\underline{\mathcal{F}f}$进行Inverse 离散 傅立叶变换，即$\underline{\mathcal{F}^{-1}\mathcal{F}f}$，也会得到周期为$N$的离散信号$\underline{f}$，这表明了原始信号$\underline{f}$也是周期为$N$的离散信号。
+这种周期为$N$的特性是由$\underline{\omega}$的周期性决定的。对某离散信号$\underline{f}$进行离散 傅立叶变换，会得到周期为$N$的离散信号$\underline{\mathcal{F}f}$，然后对$\underline{\mathcal{F}f}$进行离散傅立叶逆变换，即$\underline{\mathcal{F}^{-1}\mathcal{F}f}$，也会得到周期为$N$的离散信号$\underline{f}$，这表明了原始信号$\underline{f}$也是周期为$N$的离散信号。
 
-因此有结论如下：进行离散 傅立叶变换的输入离散信号$\underline{f}$与输出离散信号$\underline{\mathcal{F}f}$都是周期为$N$（$N$项）的周期信号；同理进行Inverse 离散 傅立叶变换的输入离散信号$\underline{F}$与输出离散信号$\underline{\mathcal{F}^{-1}\mathcal{F}}$都是周期为$N$（$N$项）的周期信号。
+因此有结论如下：进行离散 傅立叶变换的输入离散信号$\underline{f}$与输出离散信号$\underline{\mathcal{F}f}$都是周期为$N$（$N$项）的周期信号；同理进行离散傅立叶逆变换的输入离散信号$\underline{F}$与输出离散信号$\underline{\mathcal{F}^{-1}\mathcal{F}}$都是周期为$N$（$N$项）的周期信号。
 
 % 一开始测量得到的抽样值，必须可以延拓为一系列重复的图像。在离散情况下产生的某些现象，在连续情况下并不存在。原始信号是完全没有周期性的，但是对于有限个测量值的集合情况就不同了。利用傅立叶变换分析，必须使信号具有周期性。在信号没有显示出周期性的情况下，变换会产生周期性。
 
@@ -554,7 +552,7 @@ $$
 
 对离散信号连续进行两次离散 傅立叶变换：
 \begin{align*}
-	  & \underline{\mathcal{F}}\underline{\mathcal{F}f}                                                                                                                                                             \\
+	  & \underline{\mathcal{F}\mathcal{F}f}                                                                                                                                                                         \\
 	= & \sum_{k=0}^{N-1}\left(\sum_{n=0}^{N-1}\underline{f}[n]\underline{\omega}^{-n}[k]\right)\underline{\omega}^{-k}                                                                                              \\
 	= & \sum_{n=0}^{N-1}\underline{f}[n]\left(\sum_{k=0}^{N-1}\underline{\omega}^{-n}[k]\underline{\omega}^{-k}\right)                                                                                              \\
 	= & \sum_{n=0}^{N-1}\underline{f}[n]\left(\underline{\mathcal{F}}\underline{\omega}^{-n}\right)                                                                                                                 \\
@@ -589,6 +587,62 @@ $$
 \section{快速傅立叶变换}
 离散傅立叶变换矩阵运算中主要的计算量（乘法计算量）为$N \times N$，用$O(N^2)$表示，而快速 傅立叶变换可以将计算量降到$N\cdot \log{N}$。
 \subsection{矩阵简化}
+\subsubsection{复数矩阵}
+\begin{enumerate}
+	\item H
+	      \begin{equation}
+		      \overline{\vec{z}}^T=\vec{z}^H
+	      \end{equation}
+	\item 酉矩阵
+
+	      我们这样定义标准正交向量：
+	      $$
+		      q_i^Tq_j=\begin{cases}0\quad i\neq j\\1\quad i=j\end{cases}
+	      $$
+
+	      现在，对于复向量我们需要求共轭：
+	      $$
+		      \bar{q}_i^Tq_j=q_i^Hq_j=\begin{cases}0\quad i\neq j\\1\quad i=j\end{cases}
+	      $$
+
+	      标准正交矩阵：
+	      $
+		      Q=\Bigg[q_1\ q_2\ \cdots\ q_n\Bigg]
+	      $
+	      有：$Q^TQ=I$；现在对于复矩阵则有：$Q^HQ=I$。
+
+	      正交性（orthogonal）在复数情况下也有了新名字，酉（unitary），酉矩阵（unitary matrix）与正交矩阵类似，满足$Q^HQ=I$的性质。而前面提到的傅里叶矩阵就是一个酉矩阵。
+\end{enumerate}
+\subsubsection{傅里叶矩阵}
+\begin{align*}
+	F_n=\begin{bmatrix}1&1&1&\cdots&1\\1&\omega &\omega ^2&\cdots&\omega ^{N-1}\\1&\omega ^2&\omega ^4&\cdots&\omega ^{2(N-1)}\\\vdots&\vdots&\vdots&\ddots&\vdots\\1&\omega ^{N-1}&\omega ^{2(N-1)}&\cdots&\omega ^{(N-1)^2}\end{bmatrix}
+\end{align*}
+
+对于每一个元素有：
+\begin{equation}
+	(F_N)_{ij}=\omega ^{i\times j}\quad i,j=0,1,2,\cdots,N-1
+\end{equation}
+
+矩阵中的$\omega=e^{\frac{2\cdot \pi\cdot i}{N}}$满足：$\omega ^N=1$。
+
+易知在复平面的单位圆上，$\omega=\cos\frac{2\cdot \pi}{N}+i\cdot \sin\frac{2\cdot \pi}{N}$。
+
+在傅里叶矩阵中，当我们计算$\omega$的幂时，$\omega$在单位圆上的角度翻倍。
+比如在$6$阶情形下，$\omega=e^{i\cdot 2\cdot \pi/6}$，即位于单位圆上$60^\circ$角处，其平方位于单位圆上$120^\circ$角处，而$\omega$位于$1$处。从开方的角度看，它们是$1$的$6$个六次方根，而一次的$\omega$称为原根。
+
+我们以研究$4$阶的傅立叶矩阵为例。先计算$\omega$，有$\omega=i$，$\omega^2=-1$，$\omega^3=-i$，$\omega^4=1$:
+\begin{align*}
+	F_4=\begin{bmatrix}1&1&1&1\\1&i&i^2&i^3\\1&i^2&i^4&i^6\\1&i^3&i^6&i^9\end{bmatrix}=\begin{bmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{bmatrix}
+\end{align*}
+
+矩阵的四个列向量正交，不过我们应该注意到，$F_4$的列向量并不是标准的，我们可以给矩阵乘上系数$\frac{1}{2}$（除以列向量的长度）得到标准正交矩阵:
+\begin{align*}
+	F_4=\frac{1}{2}\cdot \begin{bmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{bmatrix}
+\end{align*}
+
+此时有$F_4^HF_4=I$，于是该矩阵的逆矩阵也就是其共轭转置$F_4^H$。
+
+我们来分解$F_{64}$这个式子。我们可以发现$F_{64}^2=F_{32}$。
 \begin{align*}
 	\Bigg[F_{64}\Bigg]=\begin{bmatrix}
 		I & D \\I&-D
@@ -609,11 +663,16 @@ $$
 \end{align*}
 
 我们分开来看等式右侧的这三个矩阵：
+\begin{enumerate}
+	\item 第一个矩阵由单位矩阵$I$和对角矩阵$D=\begin{bmatrix}1&&&&\\&w&&&\\&&w^2&&\\&&&\ddots&\\&&&&w^{31}\end{bmatrix}$组成。我们称这个矩阵为修正矩阵，显然其计算量来自$D$矩阵。
+	\item 第二个矩阵为两个$F_{32}$与零矩阵组成的。
+	\item 第三个矩阵通常记为$P$矩阵，这是一个置换矩阵，其作用是讲前一个矩阵中的奇数列提到偶数列之前，将前一个矩阵从$\Bigg[x_0\ x_1\ \cdots\Bigg]$，变为$\Bigg[x_0\ x_2\ \cdots\ x_1\ x_3\ \cdots\Bigg]$。
+\end{enumerate}
 
 \subsection{利用复指数的代数性质}
 我们把和写成一个分成奇偶指数的和的形式。我们试着把一个$N$阶的离散 傅立叶变换转换成两个$\frac{N}{2}$阶离散 傅立叶变换的组合。
 
-要做到这一点，你需要假设$N$是偶数；为了继续，你需要假设$N$是$2$的乘方。
+要做到这一点，你需要假设$N$是偶数；为了继续迭代分解（iterate），你需要假设$N$是$2$的乘方。
 \subsubsection{引入$\omega[p,q]$}
 令$\omega[p,q] = e^{2\pi i\frac{q}{p}}$，则：
 \begin{align*}
@@ -624,25 +683,22 @@ $$
 
 那么：
 \begin{align*}
-	  & \omega[\frac{N}{2},-1]                             \\
-	= & e^{-2\cdot \pi\cdot  i\cdot \frac{1}{\frac{N}{2}}} \\
-	= & e^{-2\cdot \pi\cdot  i\cdot \frac{2}{N}}           \\
-	= & \omega[N,-2]
+	  & \omega[\frac{N}{2},-n\cdot m]                             \\
+	= & e^{2\cdot \pi\cdot  i\cdot \frac{-n\cdot m}{\frac{N}{2}}} \\
+	= & \omega[N,-2\cdot n\cdot m]
 \end{align*}
 
-这表明了$\omega[\frac{N}{2},-1]$是$\omega[N,-1]$的偶次方，因此：
-\begin{equation}
-	\omega[\frac{N}{2},-n] = \omega[N,-2\cdot n]
-\end{equation}
+这表明了$\omega[\frac{N}{2},-1]$是$\omega[N,-1]$的偶次方。
 
 等式右边的$2\cdot n$代表了偶次方，那么$\omega[N,-1]$的奇次方呢？
 \begin{align*}
-	  & \omega[N,-(2\cdot n+1)]                  \\
-	= & \omega[N,-2\cdot n]\cdot \omega[N,-1]    \\
-	= & \omega[\frac{N}{2},-n]\cdot \omega[N,-1]
+	  & \omega[N,-(2\cdot n+1)\cdot m]                  \\
+	= & \omega[N,-2\cdot n\cdot m-m]                    \\
+	= & \omega[N,-2\cdot n\cdot m]\cdot    \omega[N, m] \\
+	= & \omega[\frac{N}{2},-n\cdot m]\cdot \omega[N,-m]
 \end{align*}
 
-现在把$m$也放入到等式中，有：
+总结一下，有：
 \begin{equation}
 	\omega[N,-2\cdot n\cdot m]  = \omega[\frac{N}{2},-n\cdot m]
 \end{equation}
@@ -650,13 +706,7 @@ $$
 	\omega[N,-(2\cdot n+1)\cdot m]  = \omega[N,-m]\cdot \omega[\frac{N}{2},-n\cdot m]
 \end{equation}
 
-另外：
-\begin{align*}
-	  & \omega[N,-\frac{N}{2}]                       \\
-	= & e^{-2\cdot \pi\cdot  i\frac{\frac{N}{2}}{N}} \\
-	= & e^{-\pi\cdot  i} = -1
-\end{align*}
-\subsubsection{把离散 傅立叶变换公式表达成奇偶项的形式}
+\subsubsection{把离散傅立叶变换公式表达成奇偶项的形式}
 接下来就是把上述关于$\omega$的奇偶等式代入到离散 傅立叶变换公式。
 
 首先来回顾一下离散 傅立叶变换公式：
@@ -684,12 +734,12 @@ $$
 
 有了上述条件，我们回到离散 傅立叶变换公式的分解推导，
 \begin{align*}
-	  & \underline{\mathcal{F}f}                                                                     \\
-	= & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\omega[N,-2\cdot n\cdot m]                  \\
-	+ & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n+1]\omega[N,-(2\cdot n+1)\cdot m]            \\
-	= & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\omega[\frac{N}{2},-n\cdot m]               \\
-	+ & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n+1]\omega[N,-m]\omega[\frac{N}{2},-n\cdot m] \\
-	= & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2n]\omega[\frac{N}{2},-n\cdot m]                     \\
+	  & \underline{\mathcal{F}f}                                                                                 \\
+	= & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\cdot \omega[N,-2\cdot n\cdot m]                        \\
+	+ & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n+1]\cdot \omega[N,-(2\cdot n+1)\cdot m]                  \\
+	= & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\cdot \omega[\frac{N}{2},-n\cdot m]                     \\
+	+ & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n+1]\cdot \omega[N,-m]\cdot \omega[\frac{N}{2},-n\cdot m] \\
+	= & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\cdot \omega[\frac{N}{2},-n\cdot m]                     \\
 	+ & \omega[N,-m]\sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n+1]\omega[\frac{N}{2},-n\cdot m]
 \end{align*}
 
@@ -700,7 +750,7 @@ $$
 	\item $\omega[\frac{N}{2},-n\cdot m] = e^{-2\pi i\frac{n\cdot m}{\frac{N}{2}}}$中的复指数分母也由$N$替换成了$\frac{N}{2}$。
 \end{enumerate}
 
-但是其中还有一点瑕疵，因为离散 傅立叶变换是有多少个输入就会有多少个输出：$\underline{f}$有$N$个输入，则$\underline{\mathcal{F}f}$有$N$个输出，也就是说$m =0,1,\cdots,N-1$；但是$\sum\limits_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\omega[\frac{N}{2},-n\cdot m]$只有$\frac{N}{2}$个输入，也只应该有$\frac{N}{2}$个输出，也就是说$m= 0,1,\cdots,\frac{N}{2}-1$，这就与原来的离散 傅立叶变换定义相悖了。因此我们可以遵照以下规定：
+但是其中还有一点瑕疵，因为离散傅立叶变换是有多少个输入就会有多少个输出：$\underline{f}$有$N$个输入，则$\underline{\mathcal{F}f}$有$N$个输出，也就是说$m =0,1,\cdots,N-1$；但是$\sum\limits_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\omega[\frac{N}{2},-n\cdot m]$只有$\frac{N}{2}$个输入，也只应该有$\frac{N}{2}$个输出，也就是说$m= 0,1,\cdots,\frac{N}{2}-1$，这就与原来的离散 傅立叶变换定义相悖了。因此我们可以遵照以下规定：
 \begin{align*}
 	  & \underline{\mathcal{F}_N f}[m]                                                                                                             \\
 	= & \left( \underline{\mathcal{F}_{\frac{N}{2}}f}_{even} \right)[m]+\omega[N,-m]\left( \underline{\mathcal{F}_{\frac{N}{2}}f}_{odd} \right)[m] \\
@@ -708,20 +758,21 @@ $$
 \end{align*}
 这样的话只处理了$\underline{\mathcal{F}f}$的前半部分，那后半部分该怎么表达呢？
 
-后半部分的输出个数还是为$\frac{N}{2}$，即$m=0,1,\cdots,\frac{N}{2}-1$，然后其他各个部分应该进行相应的变化：
+后半部分的输出个数还是为$\frac{N}{2}$：
 \begin{enumerate}
-	\item $\underline{\mathcal{F}f}[m]$，变成$\underline{\mathcal{F}f}[m+\frac{N}{2}]$；
-	\item $\sum_{n=0}^{\frac{N}{2}-1}$与$\underline{f}[2n]$、$\underline{f}[2n+1]$，不涉及到$m$，不变；
-	\item $\omega[\frac{N}{2},-nm]$，变成$\omega[\frac{N}{2},-n(m+\frac{N}{2})] = \omega[\frac{N}{2},-nm]\omega[\frac{N}{2},-\frac{N}{2}n] = \omega[\frac{N}{2},-nm]$，就是不变；
-	\item $\omega[N,-m]$，变成$\omega[N,-(m+\frac{N}{2})] = \omega[N,-m]\omega[N,-\frac{N}{2}] = \omega[N,-m]$，也就是多了个负号。
+	\item $\underline{\mathcal{F}f}[m]$，变成$\underline{\mathcal{F}f}[m+\frac{N}{2}]$，$m = 0,1,\cdots,\frac{N}{2}-1$。
+	\item $\sum\limits_{n=0}^{\frac{N}{2}-1}$与$\underline{f}[2\cdot n]$、$\underline{f}[2\cdot n+1]$，不涉及到$m$，不变；
+	\item $\omega[\frac{N}{2},-n\cdot m]$，变成$\omega[\frac{N}{2},-n\cdot (m+\frac{N}{2})] = \omega[\frac{N}{2},-n\cdot m]\cdot \omega[\frac{N}{2},-\frac{N}{2}\cdot n] = \omega[\frac{N}{2},-n\cdot m]$，相当于不变；
+	\item $\omega[N,-m]$，变成$\omega[N,-(m+\frac{N}{2})] = \omega[N,-m]\cdot \omega[N,-\frac{N}{2}] = \omega[N,-m]$，也就是多了个负号。
 \end{enumerate}
 
 把上述变化统合起来，有
 \begin{align*}
-	  & \underline{\mathcal{F}f}[m+\frac{N}{2}]                                         \\
-	= & \sum_{n=0}^{\frac{N}{2}-1f}[2n]\omega[\frac{N}{2},-nm]                          \\
-	- & \omega[N,-m]\sum_{n=}^{\frac{N}{2}-1}\underline{f}[2n+1]\omega[\frac{N}{2},-nm]
+	  & \underline{\mathcal{F}f}[m+\frac{N}{2}]                                                                       \\
+	= & \sum_{n=0}^{\frac{N}{2}-1}\underline{f}[2\cdot n]\cdot \omega[\frac{N}{2},-n\cdot m]                          \\
+	- & \omega[N,-m]\cdot \sum_{n=}^{\frac{N}{2}-1}\cdot \underline{f}[2\cdot n+1]\cdot \omega[\frac{N}{2},-n\cdot m]
 \end{align*}
+
 即：
 \begin{align*}
 	  & \underline{\mathcal{F}}_N\underline{f}[m]                                                                                                                          \\
