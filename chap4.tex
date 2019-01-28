@@ -359,46 +359,28 @@ $$
 
 离散傅立叶变换矩阵与它的共轭转置矩阵相乘，有：
 \begin{align*}
-	      & \underline{\mathcal{F}}\cdot \underline{\mathcal{F}}^{*} \\
-	=     &
-	\left[
-		\begin{matrix}
-			1      & 1               & 1                & \cdots & 1                 \\
-			1      & \omega^{-1}     & \omega^{-2}      & \cdots & \omega^{-(N-1)}   \\
-			1      & \omega^{-2}     & \omega^{-4}      & \cdots & \omega^{-2(N-1)}  \\
-			\vdots & \vdots          & \vdots           & \cdots & \vdots            \\
-			1      & \omega^{-(N-1)} & \omega^{-2(N-1)} & \cdots & \omega^{-(N-1)^2}
-		\end{matrix}
-		\right]                                                          \\
-	\cdot &
-	\left[
-		\begin{matrix}
-			1      & 1              & 1               & \cdots & 1                \\
-			1      & \omega^{1}     & \omega^{2}      & \cdots & \omega^{(N-1)}   \\
-			1      & \omega^{2}     & \omega^{4}      & \cdots & \omega^{2(N-1)}  \\
-			\vdots & \vdots         & \vdots          & \vdots & \vdots           \\
-			1      & \omega^{(N-1)} & \omega^{2(N-1)} & \cdots & \omega^{(N-1)^2}
-		\end{matrix}
-		\right]                                                          \\
-	=     & \left[
-		\begin{matrix}\underline{\omega}^0\cdot\underline{\omega}^0
-			\underline{\omega}^1\cdot\underline{\omega}^0                                                      & \underline{\omega}^2\cdot\underline{\omega}^0     & \cdots & \underline{\omega}^{N-1}\cdot\underline{\omega}^0     \\
-			\underline{\omega}^0\cdot\underline{\omega}^1\underline{\omega}^1\cdot\underline{\omega}^1         & \underline{\omega}^2\cdot\underline{\omega}^1     & \cdots & \underline{\omega}^{N-1}\cdot\underline{\omega}^1     \\
-			\underline{\omega}^0\cdot\underline{\omega}^2\underline{\omega}^1\cdot\underline{\omega}^2         & \underline{\omega}^2\cdot\underline{\omega}^2     & \cdots & \underline{\omega}^{N-1}\cdot\underline{\omega}^2     \\
-			\vdots                                                                                             & \vdots                                            & \vdots & \vdots                                                \\
-			\underline{\omega}^0\cdot\underline{\omega}^{N-1}\underline{\omega}^1\cdot\underline{\omega}^{N-1} & \underline{\omega}^2\cdot\underline{\omega}^{N-1} & \cdots & \underline{\omega}^{N-1}\cdot\underline{\omega}^{N-1} \\
-		\end{matrix}
-		\right]                                                          \\
-	=     &
-	\left[
-		\begin{matrix}
-			N      & 0      & 0      & \cdots & 0      \\
-			0      & N      & 0      & \cdots & 0      \\
-			0      & 0      & N      & \cdots & 0      \\
-			\vdots & \vdots & \vdots & \vdots & \vdots \\
-			0      & 0      & 0      & \cdots & N
-		\end{matrix}
-		\right]=N\cdot I
+	      & \underline{\mathcal{F}}\underline{\mathcal{F}}^{*}                                                                           \\
+	=     & \begin{bmatrix} 1      & 1               & 1                & \cdots & 1                 \\
+		1      & \omega^{-1}     & \omega^{-2}      & \cdots & \omega^{-(N-1)}   \\
+		1      & \omega^{-2}     & \omega^{-4}      & \cdots & \omega^{-2(N-1)}  \\
+		\vdots & \vdots          & \vdots           & \cdots & \vdots            \\
+		1      & \omega^{-(N-1)} & \omega^{-2(N-1)} & \cdots & \omega^{-(N-1)^2}\end{bmatrix}                                                                                                   \\
+	\cdot & \begin{bmatrix}
+		1      & 1              & 1               & \cdots & 1                \\
+		1      & \omega^{1}     & \omega^{2}      & \cdots & \omega^{(N-1)}   \\
+		1      & \omega^{2}     & \omega^{4}      & \cdots & \omega^{2(N-1)}  \\
+		\vdots & \vdots         & \vdots          & \cdots & \vdots           \\
+		1      & \omega^{(N-1)} & \omega^{2(N-1)} & \cdots & \omega^{(N-1)^2}\end{bmatrix}
+	\\
+	=     & \begin{bmatrix}
+		\underline{\omega}^0\cdot\underline{\omega}^0     & \underline{\omega}^1\cdot\underline{\omega}^0     & \underline{\omega}^2\cdot\underline{\omega}^0     & \cdots & \underline{\omega}^{N-1}\cdot\underline{\omega}^0     \\
+		\underline{\omega}^0\cdot\underline{\omega}^1     & \underline{\omega}^1\cdot\underline{\omega}^1     & \underline{\omega}^2\cdot\underline{\omega}^1     & \cdots & \underline{\omega}^{N-1}\cdot\underline{\omega}^1     \\
+		\underline{\omega}^0\cdot\underline{\omega}^2     & \underline{\omega}^1\cdot\underline{\omega}^2     & \underline{\omega}^2\cdot\underline{\omega}^2     & \cdots & \underline{\omega}^{N-1}\cdot\underline{\omega}^2     \\
+		\vdots                                            & \vdots                                            & \vdots                                            & \cdots & \vdots                                                \\
+		\underline{\omega}^0\cdot\underline{\omega}^{N-1} & \underline{\omega}^1\cdot\underline{\omega}^{N-1} & \underline{\omega}^2\cdot\underline{\omega}^{N-1} & \cdots & \underline{\omega}^{N-1}\cdot\underline{\omega}^{N-1} \\
+	\end{bmatrix}                                                                                                   \\
+	=     & \begin{bmatrix} N &0  &0  &\cdots  &0 \\  0 &N  &0  &\cdots  &0 \\  0 &0  &N  &\cdots  &0 \\  \vdots &\vdots  &\vdots  &\cdots  &\vdots \\  0 &0  &0  &\cdots  &N  \end{bmatrix}  \qquad \left( \underline{\omega}^l\cdot\underline{\omega}^k = \begin{cases} 0 & \text{ , } k\neq l \\  N & \text{ , } k= l \end{cases} \right) \\
+	=     & N\cdot I \qquad (I\ is\ N\times N\ identity\ matrix)
 \end{align*}
 
 因此：
@@ -413,12 +395,12 @@ $$
 
 通过上面的推导，我们可以可以得到离散傅立叶逆变换矩阵为：
 \begin{equation}
-	\underline{\mathcal{F}}^{-1} = \frac{1}{N}\underline{\mathcal{F}}^{*}
+	\underline{\mathcal{F}}^{-1} = \frac{1}{N}\cdot \underline{\mathcal{F}}^{*}
 \end{equation}
 
 即：
 \begin{equation}
-	\left( \underline{\mathcal{F}}^{-1} \right)_{m\times n} = \frac{1}{N}\omega^{m\times n}
+	\left( \underline{\mathcal{F}}^{-1} \right)_{m\times n} = \frac{1}{N}\cdot \omega^{m\times n}
 \end{equation}
 这个结果同样也能运用推导离散 傅立叶变换矩阵的过程得出。
 
@@ -611,23 +593,27 @@ $$
 	      $
 	      有：$Q^TQ=I$；现在对于复矩阵则有：$Q^HQ=I$。
 
-	      正交性（orthogonal）在复数情况下也有了新名字，酉（unitary），酉矩阵（unitary matrix）与正交矩阵类似，满足$Q^HQ=I$的性质。而前面提到的傅里叶矩阵就是一个酉矩阵。
+	      正交性（orthogonal）在复数情况下也有了新名字，酉（unitary），酉矩阵（unitary matrix）与正交矩阵类似，满足$Q^HQ=I$的性质。而前面提到的傅立叶矩阵就是一个酉矩阵。
 \end{enumerate}
-\subsubsection{傅里叶矩阵}
+\subsubsection{傅立叶矩阵}
 \begin{align*}
-	F_n=\begin{bmatrix}1&1&1&\cdots&1\\1&\omega &\omega ^2&\cdots&\omega ^{N-1}\\1&\omega ^2&\omega ^4&\cdots&\omega ^{2(N-1)}\\\vdots&\vdots&\vdots&\ddots&\vdots\\1&\omega ^{N-1}&\omega ^{2(N-1)}&\cdots&\omega ^{(N-1)^2}\end{bmatrix}
+	F_n=\begin{bmatrix} 1      & 1               & 1                & \cdots & 1                 \\
+		1      & \omega^{-1}     & \omega^{-2}      & \cdots & \omega^{-(N-1)}   \\
+		1      & \omega^{-2}     & \omega^{-4}      & \cdots & \omega^{-2(N-1)}  \\
+		\vdots & \vdots          & \vdots           & \cdots & \vdots            \\
+		1      & \omega^{-(N-1)} & \omega^{-2(N-1)} & \cdots & \omega^{-(N-1)^2}\end{bmatrix}
 \end{align*}
 
 对于每一个元素有：
-\begin{equation}
-	(F_N)_{ij}=\omega ^{i\times j}\quad i,j=0,1,2,\cdots,N-1
-\end{equation}
+$$
+	(F_N)_{m\times n}=\omega ^{-m\times n}\quad m,n=0,1,2,\cdots,N-1
+$$
 
-矩阵中的$\omega=e^{\frac{2\cdot \pi\cdot i}{N}}$满足：$\omega ^N=1$。
+矩阵中的$\omega=e^{\frac{-2\cdot \pi\cdot i}{N}}$满足：$\omega ^N=1$。
 
-易知在复平面的单位圆上，$\omega=\cos\frac{2\cdot \pi}{N}+i\cdot \sin\frac{2\cdot \pi}{N}$。
+易知在复平面的单位圆上，$\omega=\cos\frac{2\cdot \pi}{N}-i\cdot \sin\frac{2\cdot \pi}{N}$。
 
-在傅里叶矩阵中，当我们计算$\omega$的幂时，$\omega$在单位圆上的角度翻倍。
+在傅立叶矩阵中，当我们计算$\omega$的幂时，$\omega$在单位圆上的角度翻倍。
 比如在$6$阶情形下，$\omega=e^{i\cdot 2\cdot \pi/6}$，即位于单位圆上$60^\circ$角处，其平方位于单位圆上$120^\circ$角处，而$\omega$位于$1$处。从开方的角度看，它们是$1$的$6$个六次方根，而一次的$\omega$称为原根。
 
 我们以研究$4$阶的傅立叶矩阵为例。先计算$\omega$，有$\omega=i$，$\omega^2=-1$，$\omega^3=-i$，$\omega^4=1$:

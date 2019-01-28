@@ -1,13 +1,10 @@
 INFO: latexindent version 3.4.1, 2018-01-18, a script to indent .tex files
       latexindent lives here: /usr/local/texlive/2018/texmf-dist/scripts/latexindent/
-      Sat Jan 26 23:38:34 2019
-      Filename: /Users/guozirui/Documents/笔记/�
-      立叶变换笔记/chap4.tex
+      Mon Jan 28 10:09:03 2019
+      Filename: /Users/guozirui/Documents/GitHub/NoteFourierAnalysis/chap6.tex
 INFO: Processing switches:
-      -w|--overwrite: Overwrite mode active, will make a back up of /Users/guozirui/Documents/笔记/�
-      立叶变换笔记/chap4.tex first
-INFO: Directory for backup files and indent.log: /Users/guozirui/Documents/笔记/�
-      立叶变换笔记
+      -w|--overwrite: Overwrite mode active, will make a back up of /Users/guozirui/Documents/GitHub/NoteFourierAnalysis/chap6.tex first
+INFO: Directory for backup files and indent.log: /Users/guozirui/Documents/GitHub/NoteFourierAnalysis
 INFO: YAML settings read: defaultSettings.yaml
       Reading defaultSettings.yaml from /usr/local/texlive/2018/texmf-dist/scripts/latexindent/defaultSettings.yaml
 INFO: YAML settings read: indentconfig.yaml or .indentconfig.yaml
@@ -15,20 +12,15 @@ INFO: YAML settings read: indentconfig.yaml or .indentconfig.yaml
       To specify user settings you would put indentconfig.yaml here: /Users/guozirui/indentconfig.yaml
       Alternatively, you can use the hidden file .indentconfig.yaml as: /Users/guozirui/.indentconfig.yaml
 INFO: Backup procedure (-w flag active):
-      copying /Users/guozirui/Documents/笔记/�
-      立叶变换笔记/chap4.tex to /Users/guozirui/Documents/笔记/�
-      立叶变换笔记/chap4.bak0
-      Backup file: /Users/guozirui/Documents/笔记/�
-      立叶变换笔记/chap4.bak0
-      /Users/guozirui/Documents/笔记/�
-      立叶变换笔记/chap4.tex will be overwritten after indentation
+      copying /Users/guozirui/Documents/GitHub/NoteFourierAnalysis/chap6.tex to /Users/guozirui/Documents/GitHub/NoteFourierAnalysis/chap6.bak0
+      Backup file: /Users/guozirui/Documents/GitHub/NoteFourierAnalysis/chap6.bak0
+      /Users/guozirui/Documents/GitHub/NoteFourierAnalysis/chap6.tex will be overwritten after indentation
 INFO: Phase 1: searching for objects
 INFO: Phase 2: finding surrounding indentation
 INFO: Phase 3: indenting objects
 INFO: Phase 4: final indentation check
 INFO: Output routine:
-      Overwriting file /Users/guozirui/Documents/笔记/�
-      立叶变换笔记/chap4.tex
+      Overwriting file /Users/guozirui/Documents/GitHub/NoteFourierAnalysis/chap6.tex
       --------------
 INFO: Please direct all communication/issues to:
       https://github.com/cmhughes/latexindent.pl

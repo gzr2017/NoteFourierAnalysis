@@ -23,9 +23,9 @@
 	      \end{align*}
 \end{enumerate}
 
-在傅立叶变换公式法计算中，我们能很轻松地运用傅里叶的逆变换、对偶等定理得到结果。
+在傅立叶变换公式法计算中，我们能很轻松地运用傅立叶的逆变换、对偶等定理得到结果。
 
-但是在实际应用中我们对信号进行傅里叶转换并处理后，通常需要用积分方法进行计算后去获得原始的信号，而积分方法的第二三个式子的积分求法是非常困难的。
+但是在实际应用中我们对信号进行傅立叶转换并处理后，通常需要用积分方法进行计算后去获得原始的信号，而积分方法的第二三个式子的积分求法是非常困难的。
 
 另外，在计算的时候还必须面对一些函数的收敛性问题——由于$\Pi$函数是跳跃的，最终积分运算得到的$\Pi$会在跳变点$\pm \frac{1}{2}$处取值为$\frac{1}{2}\cdot (0+1)$。
 \subsubsection{例子2}
@@ -293,7 +293,7 @@ $$
 	\centering
 	\includegraphics[width=0.4\textwidth]{assets/fdelta.png}
 \end{figure}
-在$\sigma$的定义中，我们知道$\sigma$无限集中于$0$点，我们通过$\Pi$函数的极限形式来逼近它。而它的傅里叶变换为$1$，这是均匀散开的。还记得我们曾经在讨论傅里叶缩放的时候讲过——时域的集中会导致频域的分散，这就是一个极端的例子。
+在$\sigma$的定义中，我们知道$\sigma$无限集中于$0$点，我们通过$\Pi$函数的极限形式来逼近它。而它的傅立叶变换为$1$，这是均匀散开的。还记得我们曾经在讨论傅立叶缩放的时候讲过——时域的集中会导致频域的分散，这就是一个极端的例子。
 \subsubsection{$\mathcal{F}\sigma_a$}
 \begin{align*}
 	  & <\mathcal{F}\sigma_a,\phi>  =  <\sigma_a,\mathcal{F}\phi>                      \\
@@ -323,7 +323,7 @@ $$
 	\centering
 	\includegraphics[width=0.4\textwidth]{assets/fe.png}
 \end{figure}
-当$a=0$时，$e^{2\cdot \pi\cdot i\cdot a\cdot x}=1$，则$\mathcal{F}1=\sigma$。$f(x)=1$的傅里叶变换为$\sigma$，这是一个时域分散导致频域集中的极端例子。
+当$a=0$时，$e^{2\cdot \pi\cdot i\cdot a\cdot x}=1$，则$\mathcal{F}1=\sigma$。$f(x)=1$的傅立叶变换为$\sigma$，这是一个时域分散导致频域集中的极端例子。
 \subsubsection{$\mathcal{F}\cos(2\cdot\pi\cdot a\cdot x)$}
 \begin{align*}
 	  & \mathcal{F}\cos(2\cdot\pi\cdot a\cdot x)                                                                         \\
@@ -513,3 +513,5 @@ $<T(y),\phi(x+y)>$将产生一个变量为$x$的函数，只有当该函数为�
 	\mathcal{F}(S*T)=\mathcal{F}S\cdot \mathcal{F}T
 \end{equation}
 该定理成立的条件与卷积成立的条件一致，即$T^−$与速降函数进行卷积后仍然是速降函数。
+
+采样定理于1928年由美国物理学家H.奈奎斯特首先提出来，因此被称为奈奎斯特采样定理。1933年，苏联工程师科捷利尼科夫首次用公式严格地表述了这一定理，因此在苏联的文献中称其为科捷利尼科夫采样定理。1948年，信息论的创始人C·E·香农对这一定理加以明确的说明，并正式作为定理引用，因此在许多文献中又称为香衣采样定理。

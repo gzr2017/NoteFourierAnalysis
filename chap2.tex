@@ -83,7 +83,8 @@ $M$是该函数绝对值的积分，是有限值。如果$T\rightarrow \infty$�
 \end{enumerate}
 \subsubsection{注解}
 傅立叶变换在频域上分析信号，因此自变量为频率变量$s$。
-\subsection{Inverse 傅立叶变换}
+\subsection{傅立叶逆变换}
+傅立叶正变换和反变换看起来差不多，经常让人记混。正变换积分内的指数上有一个负号，而反变换没有。如果你已经有了内积的背景知识，就可以知道，正变换就是信号与基函数$e^{i\cdot w\cdot t}$做内积，而复数做内积需要取共辄，所以就有了一个负号。而反 变换就是用基函数去合成原来的信号，所以就没有负号。
 \subsubsection{两种书写方式}
 \begin{enumerate}
 	\item $\mathcal{F}^{-1}g(s)=\int_{-\infty}^{\infty}\ g(s)\cdot e^{2\cdot \pi\cdot i\cdot s\cdot t}\ ds$；
@@ -156,6 +157,21 @@ $$
 
 一般情况下，$f*g$都比单独的$f$或$g$要平滑一些。就好像矩形函数$\Pi$没有三角函数$\Lambda$平滑一些。
 \section{傅立叶变换的对称性}
+\subsubsection{奇偶虚实性}
+%TODO: 余弦信号是实偶函数，傅立叶变换也是实偶函数；正弦信号是实奇函数，傅立叶变换为虚奇函数。
+%TODO: 这里好像掉了些什么东西……
+\begin{enumerate}
+	\item 偶函数的傅立叶变换也是偶函数；
+	\item 奇函数的傅立叶变换也是奇函数；
+	\item 实函数的傅立叶变换的实部是偶函数，虚部是奇函数；
+	\item 实函数傅立叶变换的幅度是偶函数，相位是奇函数：
+	      \begin{align*}
+		      |X(\omega)|  & =\sqrt{\Re[X(\omega)]^2+\Im[X(\omega)]^2}     \\
+		      \phi(\omega) & =\arctan\frac{\Im[X(\omega)]}{\Re[X(\omega)]}
+	      \end{align*}
+	\item 实偶函数的傅立叶变换是实偶函数。
+
+\end{enumerate}
 \subsection{时域和频域之间的对称关系}
 \begin{enumerate}
 	\item 傅立叶变换从时域转换到频域；
@@ -218,7 +234,7 @@ $\mathcal{F}^{-1}f$中对时域进行了Inverse 傅立叶变换。And this makes
 	\mathcal{F}\mathcal{F}f= \mathcal{F}(\mathcal{F}f)=\mathcal{F}(\mathcal{F}^-(f^-)) =  f^-
 \end{equation}
 
-函数连续进行两次傅里叶变换等于该函数的反转。
+函数连续进行两次傅立叶变换等于该函数的反转。
 
 我们可以看一个应用：
 \begin{align*}
@@ -295,7 +311,7 @@ $$
 
 信号 Processing can be said to how can you use one function(信号) to modify another.
 
-大部分情况下，信号处理是着力于改变信号的频谱，也就是说，先对信号进行傅里叶变换，然后在频域进行处理，之和进行傅里叶逆变换得到处理过后的信号。
+大部分情况下，信号处理是着力于改变信号的频谱，也就是说，先对信号进行傅立叶变换，然后在频域进行处理，之和进行傅立叶逆变换得到处理过后的信号。
 \subsection{线性处理}
 \begin{align*}
 	  & \mathcal{F}(f+g)                                                                                                                                        \\

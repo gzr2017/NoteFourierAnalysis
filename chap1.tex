@@ -1,6 +1,6 @@
 \chapter{傅立叶级数}
 \section{波的时域与空域}
-谈频率的时候，时间就不再是一个变量。
+当谈到频率的时候，一定假定主体是一个周期信号，这意味着信号的时间是从负无穷持续到正无穷，这时时间就不再是一个变量。
 \begin{enumerate}
 	\item 空间固定，使用频率表示一秒内经过多少个波；
 	\item 时间固定，使用周期描述波在空间上的分布；
@@ -34,7 +34,7 @@
 \end{align*}
 
 从这个例子可以看出，输入是一个余弦信号，输出也是一个余弦信号。只是幅度和相位有了一定改变，但是频率没有变。
-\subsection{One 周期, many frequencies.}
+\subsection{One period, many frequencies.}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{assets/Figure_1.png}
@@ -190,7 +190,7 @@ $$
 	c_m=\int_0^1 \ e^{-2\cdot \pi\cdot i\cdot m\cdot t}\cdot f(t)\ dt
 $$
 
-\subsection{傅立叶参数 傅立叶系数}
+\subsection{傅立叶系数}
 我们用新记号$\hat{f}(k)$表示$c_k$：
 \begin{equation}
 	\hat{f}(k)=\int_0^1 \ e^{-2\cdot \pi\cdot i\cdot m\cdot t}\cdot f(t)\ dt

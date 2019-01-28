@@ -1,0 +1,91 @@
+\chapter{高维傅立叶变换}
+一个二维图像的亮度（灰度）可以用$f(x_1,x_2)$来表示，图像平面作为$x_1,x_2$平面，灰度作为$z$轴，形成一个三维曲面。
+
+一维傅立叶变换的作用是把二维平面上的曲线转换成频域表示，二维的傅立叶变换的作用就是把三维曲面转换成频域表示。
+\section{从一维傅立叶变换到二维傅立叶变换}
+一维傅立叶变换的公式如下：
+$$
+	\mathcal{F}f(s) = \int_{-\infty}^{\infty}e^{-2\cdot \pi \cdot i\cdot s\cdot t}f(t)dt
+$$
+
+其中有变量$s,t$，变换中与这些变量相关的部分有：$f(t)$，$\mathcal{F}f(s)$以及$e^{-2\cdot \pi\cdot  i\cdot s\cdot t}$。
+
+二维傅立叶变换中，变量$s,t$都变成了如下二维变量：
+\begin{enumerate}
+	\item 空间变量
+	      $$
+		      \underline{x}=(x_1,x_2)
+	      $$
+	      我们在讨论一维傅立叶变换的时候采用的是以时间作为单位的时域，但是在二维（$N$维）傅立叶变换的时候采用的是空间为单位的空域。
+	\item 频率变量
+	      $$
+		      \underline{\xi} = (\xi_1,\xi_2)
+	      $$
+\end{enumerate}
+
+那么二维空域函数就可以写成：
+$$
+	f(\underline{x}) = f(x_1,x_2)
+$$
+
+二维频域函数就写成：
+$$
+	\mathcal{F}f(\underline{\xi} = \mathcal{F}f(\xi_1,\xi_2))
+$$
+
+复指数中的乘积$s\cdot t$就变成了$\underline{x}$与$\underline{\xi}$的内积（把$\underline{x}$，$\underline{\xi}$看作向量）：
+$$
+	\underline{x}\cdot \underline{\xi}=x_1\cdot \xi_1+x_2\cdot \xi_2
+$$
+
+那么复指数$e^{-2\cdot\pi\cdot i\cdot s\cdot t}$就变成了：
+$$
+	e^{-2\cdot\pi\cdot i\cdot (\underline{x}\cdot \underline{\xi})}=e^{-2\cdot\pi\cdot i\cdot (x_1\cdot \xi_1+x_2\cdot \xi_2)}
+$$
+
+有了以上的变量替换，二维傅立叶变换有如下形式：
+\begin{enumerate}
+	\item 向量形式
+	      $$
+		      \mathcal{F}f(\underline{\xi}) = \int_{\mathbb{R}^2}e^{-2\pi i(\underline{x}\cdot \underline{\xi})}f(\underline{x})d\underline{x}
+	      $$
+	\item 分量形式
+	      $$
+		      \mathcal{F}f(\xi_1,\xi_2) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-2\pi i(x_1\xi_1+x_2\xi_2)}f(x_1,x_2)dx_1dx_2
+	      $$
+\end{enumerate}
+\section{$N$维傅立叶变换}
+$$
+	\begin{matrix} \underline{x} &= &(x_1,x_2,…,x_n)\\ \underline{\xi} &= &(\xi_1,\xi_2,…,\xi_n)\\ \underline{x}\cdot \underline{\xi} &= &x_1\xi_1+x_2\xi_2+…+x_n\xi_n \end{matrix}
+$$
+
+向量形式：
+$$
+	\displaystyle{ \mathcal{F}f(\underline{\xi}) = \int_{\mathbb{R}^n}e^{-2\pi i(\underline{x}\cdot \underline{\xi})}f(\underline{x})d\underline{x} }
+$$
+
+分量形式：
+$$
+	\displaystyle{ \mathcal{F}f(\xi_1,\xi_2,…,\xi_n) = \underbrace{\int_{-\infty}^{\infty}…\int_{-\infty}^{\infty}}_{n}e^{-2\pi i(x_1\xi_1+x_2\xi_2+...+x_n\xi_n)}f(x_1,x_2,...,x_n)dx_1dx_2…dx_n }
+$$
+
+傅立叶逆变换：
+$$
+	\displaystyle{ \mathcal{F}^{-1}g(\underline{x}) = \int_{\mathbb{R}^n}e^{2\pi i(\underline{x}\cdot \underline{\xi})}g(\underline{\xi})d\underline{\xi} }
+$$
+\section{深入理解多维傅立叶变换}
+\subsection{一维复指数}
+\subsection{二维复指数}
+\section{可分离函数}
+有一类函数的高维傅立叶变换能通过计算一系列低维傅立叶变换来得到，这类函数被称为可分离函数。（
+
+There's an important class of functions for which you can compute a higher-dimensional transform by computing a series of lower-dimensional transforms. These are separate functions.
+
+一般来说，如果一个高维函数能写成低维函数的乘积，那么该高维函数的傅立叶变换也能写成这些低维函数的傅立叶变换的乘积。
+\subsection{$\Pi(x_1,x_2)$}
+\subsection{二维高斯函数}
+\subsection{径向函数}
+\section{多维傅立叶变换的卷积定理}
+\section{多维傅里叶变换的移位定理}
+\section{多维傅里叶变换缩放定理}
+\section{多维$\delta$函数}
