@@ -7,215 +7,250 @@
 \contentsline {section}{\numberline {1.3}傅立叶级数的两种表达方式}{10}
 \contentsline {subsection}{\numberline {1.3.1}三角函数形式表示}{10}
 \contentsline {subsection}{\numberline {1.3.2}复指形式表示}{10}
-\contentsline {section}{\numberline {1.4}傅立叶级数的对称性}{10}
-\contentsline {subsection}{\numberline {1.4.1}欧拉公式Euler's Formula}{10}
-\contentsline {subsection}{\numberline {1.4.2}傅立叶级数的对称性}{11}
-\contentsline {section}{\numberline {1.5}从三角函数到复指形}{11}
-\contentsline {subsection}{\numberline {1.5.1}从三角函数到复指形}{11}
-\contentsline {subsection}{\numberline {1.5.2}求解$c_k$}{12}
-\contentsline {subsection}{\numberline {1.5.3}傅立叶系数}{12}
-\contentsline {section}{\numberline {1.6}通用性验证}{13}
-\contentsline {subsection}{\numberline {1.6.1}适用范围}{13}
-\contentsline {subsubsection}{\numberline {1.6.1.1}关于三角函数的讨论}{13}
-\contentsline {subsubsection}{\numberline {1.6.1.2}Dirichlet Condition}{13}
-\contentsline {subsubsection}{\numberline {1.6.1.3}有限求和}{13}
-\contentsline {subsection}{\numberline {1.6.2}收敛性}{13}
-\contentsline {subsubsection}{\numberline {1.6.2.1}$L_2$收敛}{13}
-\contentsline {subsubsection}{\numberline {1.6.2.2}收敛结论}{13}
-\contentsline {section}{\numberline {1.7}函数的内积}{14}
-\contentsline {subsection}{\numberline {1.7.1}函数内积计算方法}{14}
-\contentsline {subsection}{\numberline {1.7.2}与Vector类比}{14}
-\contentsline {section}{\numberline {1.8}傅立叶级数与矩阵}{14}
-\contentsline {subsection}{\numberline {1.8.1}空间内的Orthogonal Basis}{14}
-\contentsline {subsection}{\numberline {1.8.2}Orthogonal Basis}{14}
-\contentsline {subsubsection}{\numberline {1.8.2.1}三角函数的Orthogonal Basis}{14}
-\contentsline {subsubsection}{\numberline {1.8.2.2}复指函数的Orthogonal Basis}{14}
-\contentsline {subsection}{\numberline {1.8.3}求解傅立叶系数}{15}
-\contentsline {subsubsection}{\numberline {1.8.3.1}三角函数形}{15}
-\contentsline {subsubsection}{\numberline {1.8.3.2}复指函数形}{15}
-\contentsline {section}{\numberline {1.9}卷积}{16}
-\contentsline {subsection}{\numberline {1.9.1}定义}{16}
-\contentsline {subsection}{\numberline {1.9.2}卷积与偏微分方程}{16}
-\contentsline {subsection}{\numberline {1.9.3}图解卷积}{16}
-\contentsline {chapter}{\numberline {第二章\hspace {.3em}}傅立叶变换}{19}
-\contentsline {section}{\numberline {2.1}从傅立叶级数到傅立叶变换}{19}
-\contentsline {subsection}{\numberline {2.1.1}对于周期为1的函数}{19}
-\contentsline {subsection}{\numberline {2.1.2}对于周期为T的函数}{19}
-\contentsline {subsection}{\numberline {2.1.3}对于周期为$\infty $的函数}{19}
-\contentsline {section}{\numberline {2.2}新符号$\mathcal {F}$}{20}
-\contentsline {section}{\numberline {2.3}傅立叶变换和Inverse 傅立叶变换}{20}
-\contentsline {subsection}{\numberline {2.3.1}傅立叶变换}{20}
-\contentsline {subsubsection}{\numberline {2.3.1.1}两种书写方式}{20}
-\contentsline {subsubsection}{\numberline {2.3.1.2}注解}{21}
-\contentsline {subsection}{\numberline {2.3.2}傅立叶逆变换}{21}
-\contentsline {subsubsection}{\numberline {2.3.2.1}两种书写方式}{21}
-\contentsline {subsubsection}{\numberline {2.3.2.2}注解}{21}
-\contentsline {subsection}{\numberline {2.3.3}傅立叶变换和Inverse 傅立叶变换之间的关系}{21}
-\contentsline {subsection}{\numberline {2.3.4}零点的值}{21}
-\contentsline {section}{\numberline {2.4}傅立叶变换实例}{21}
-\contentsline {subsection}{\numberline {2.4.1}$\Pi $函数}{21}
-\contentsline {subsection}{\numberline {2.4.2}$\Lambda $函数}{22}
-\contentsline {subsection}{\numberline {2.4.3}$\Lambda $与$\Pi $之间的关系}{22}
-\contentsline {section}{\numberline {2.5}傅立叶变换的对称性}{22}
-\contentsline {subsubsection}{\numberline {2.5.0.1}奇偶虚实性}{22}
-\contentsline {subsection}{\numberline {2.5.1}时域和频域之间的对称关系}{23}
-\contentsline {subsection}{\numberline {2.5.2}反转信号}{23}
-\contentsline {subsection}{\numberline {2.5.3}对偶定理}{23}
-\contentsline {subsubsection}{\numberline {2.5.3.1}对偶定理1}{23}
-\contentsline {subsubsection}{\numberline {2.5.3.2}对偶定理2}{23}
-\contentsline {subsubsection}{\numberline {2.5.3.3}对偶定理3}{23}
-\contentsline {subsubsection}{\numberline {2.5.3.4}对偶定理4}{24}
-\contentsline {section}{\numberline {2.6}傅立叶变换的时延性}{24}
-\contentsline {section}{\numberline {2.7}傅立叶变换的尺度变化}{24}
-\contentsline {subsection}{\numberline {2.7.1}证明}{24}
-\contentsline {subsubsection}{\numberline {2.7.1.1}$a>0$时}{24}
-\contentsline {subsubsection}{\numberline {2.7.1.2}$a<0$时}{25}
-\contentsline {subsubsection}{\numberline {2.7.1.3}总结}{25}
-\contentsline {subsection}{\numberline {2.7.2}注解}{25}
-\contentsline {section}{\numberline {2.8}傅立叶变换的卷积}{25}
-\contentsline {subsection}{\numberline {2.8.1}线性处理}{25}
-\contentsline {subsection}{\numberline {2.8.2}频域相乘处理}{25}
-\contentsline {section}{\numberline {2.9}滤波}{26}
-\contentsline {subsection}{\numberline {2.9.1}滤波器}{26}
-\contentsline {subsection}{\numberline {2.9.2}常见滤波器}{26}
-\contentsline {section}{\numberline {2.10}傅立叶变换的导数定理}{27}
-\contentsline {subsection}{\numberline {2.10.1}$\mathcal {F}f'(s)=2\cdot \pi \cdot i\cdot s\cdot \mathcal {F}f(s)$}{27}
-\contentsline {subsection}{\numberline {2.10.2}$(f*g)'=f'*g$}{27}
-\contentsline {section}{\numberline {2.11}正态分布}{27}
-\contentsline {subsection}{\numberline {2.11.1}正态分布与标准分布}{27}
-\contentsline {subsection}{\numberline {2.11.2}归一化的高斯函数$f(t)=e^{-\pi \cdot t^2}$}{27}
-\contentsline {subsubsection}{\numberline {2.11.2.1}对$f(t)=e^{-\pi \cdot t^2}$求$[0,1]$上的积分}{27}
-\contentsline {subsubsection}{\numberline {2.11.2.2}对$f(t)=e^{-\pi \cdot t^2}$求傅立叶变换}{28}
-\contentsline {section}{\numberline {2.12}分布与卷积}{28}
-\contentsline {section}{\numberline {2.13}傅立叶变换与中心极限定理}{29}
-\contentsline {subsection}{\numberline {2.13.1}中心极限定理}{29}
-\contentsline {subsubsection}{\numberline {2.13.1.1}傅立叶变换中}{29}
-\contentsline {subsubsection}{\numberline {2.13.1.2}CLT中}{29}
-\contentsline {subsection}{\numberline {2.13.2}卷积对函数的作用概览}{29}
-\contentsline {subsection}{\numberline {2.13.3}中心极限定理的推导过程}{30}
-\contentsline {subsubsection}{\numberline {2.13.3.1}初始条件}{30}
-\contentsline {subsubsection}{\numberline {2.13.3.2}解答}{30}
-\contentsline {chapter}{\numberline {第三章\hspace {.3em}}广义傅立叶变换}{31}
-\contentsline {section}{\numberline {3.1}传统傅立叶变换所存在的问题}{31}
-\contentsline {subsection}{\numberline {3.1.1}传统傅立叶变换所存在的问题}{31}
-\contentsline {subsection}{\numberline {3.1.2}问题例子}{31}
-\contentsline {subsubsection}{\numberline {3.1.2.1}例子1}{31}
-\contentsline {subsubsection}{\numberline {3.1.2.2}例子2}{31}
-\contentsline {section}{\numberline {3.2}Schwartz Space}{32}
-\contentsline {subsection}{\numberline {3.2.1}定义}{32}
-\contentsline {subsection}{\numberline {3.2.2}性质}{32}
-\contentsline {section}{\numberline {3.3}Parserval等式}{32}
-\contentsline {subsection}{\numberline {3.3.1}定义}{32}
-\contentsline {subsection}{\numberline {3.3.2}注解}{32}
-\contentsline {subsection}{\numberline {3.3.3}证明}{32}
-\contentsline {section}{\numberline {3.4}脉冲函数$\delta $}{33}
-\contentsline {subsection}{\numberline {3.4.1}如何得到$\delta $}{33}
-\contentsline {subsection}{\numberline {3.4.2}脉冲函数的性质}{33}
-\contentsline {subsection}{\numberline {3.4.3}$\delta $的移位}{33}
-\contentsline {subsection}{\numberline {3.4.4}$\delta $的抽样特性}{33}
-\contentsline {subsection}{\numberline {3.4.5}$\delta $的平移特性}{34}
-\contentsline {subsection}{\numberline {3.4.6}函数$f$与$\delta _a$进行卷积}{34}
-\contentsline {subsection}{\numberline {3.4.7}$\delta $的缩放特性}{34}
-\contentsline {section}{\numberline {3.5}分布}{34}
-\contentsline {subsection}{\numberline {3.5.1}测试函数$\phi $}{35}
-\contentsline {subsection}{\numberline {3.5.2}广义函数Generalized Function}{35}
-\contentsline {subsection}{\numberline {3.5.3}匹配}{35}
-\contentsline {subsection}{\numberline {3.5.4}分布的性质}{35}
-\contentsline {section}{\numberline {3.6}分布傅立叶变换}{35}
-\contentsline {subsection}{\numberline {3.6.1}缓增函数}{35}
-\contentsline {subsection}{\numberline {3.6.2}缓增函数的傅立叶变换}{35}
-\contentsline {subsubsection}{\numberline {3.6.2.1}定义}{35}
-\contentsline {subsubsection}{\numberline {3.6.2.2}证明}{36}
-\contentsline {subsection}{\numberline {3.6.3}分布傅立叶变换的例子}{36}
-\contentsline {subsubsection}{\numberline {3.6.3.1}$\mathcal {F}\sigma $}{36}
-\contentsline {subsubsection}{\numberline {3.6.3.2}$\mathcal {F}\sigma _a$}{36}
-\contentsline {subsubsection}{\numberline {3.6.3.3}$\mathcal {F}e^{2\cdot \pi \cdot i\cdot a\cdot x}$}{36}
-\contentsline {subsubsection}{\numberline {3.6.3.4}$\mathcal {F}\qopname \relax o{cos}(2\cdot \pi \cdot a\cdot x)$}{37}
-\contentsline {subsubsection}{\numberline {3.6.3.5}$\mathcal {F}\qopname \relax o{sin}(2\cdot \pi \cdot a\cdot x)$}{37}
-\contentsline {section}{\numberline {3.7}分布与导数}{37}
-\contentsline {subsection}{\numberline {3.7.1}相关定理}{37}
-\contentsline {subsubsection}{\numberline {3.7.1.1}分布的导数}{37}
-\contentsline {subsubsection}{\numberline {3.7.1.2}分布傅立叶变换的导数定理}{37}
-\contentsline {subsection}{\numberline {3.7.2}利用分布求导数的例子}{38}
-\contentsline {subsubsection}{\numberline {3.7.2.1}单位跃阶函数（Unit Step function）}{38}
-\contentsline {subsubsection}{\numberline {3.7.2.2}有符号函数（Signum function）}{38}
-\contentsline {subsection}{\numberline {3.7.3}利用导数求傅立叶变换}{39}
-\contentsline {subsubsection}{\numberline {3.7.3.1}$\sgn $的傅立叶变换}{39}
-\contentsline {subsubsection}{\numberline {3.7.3.2}$U$的傅立叶变换}{39}
-\contentsline {section}{\numberline {3.8}分布的乘积}{39}
-\contentsline {section}{\numberline {3.9}分布与卷积}{39}
-\contentsline {subsection}{\numberline {3.9.1}分布的卷积}{39}
-\contentsline {subsection}{\numberline {3.9.2}分布的卷积定理}{40}
-\contentsline {chapter}{\numberline {第四章\hspace {.3em}}离散傅立叶变换}{41}
-\contentsline {section}{\numberline {4.1}离散傅立叶变换}{41}
-\contentsline {subsection}{\numberline {4.1.1}$f(t)$的离散近似}{41}
-\contentsline {subsection}{\numberline {4.1.2}$\mathcal {F}f(s)$的离散近似}{41}
-\contentsline {subsection}{\numberline {4.1.3}从$f(t)$的离散近似到$\mathcal {F}f(s)$的离散近似}{42}
-\contentsline {section}{\numberline {4.2}对得到的离散傅立叶变换公式化简}{42}
-\contentsline {subsection}{\numberline {4.2.1}时域和频域的倒数关系}{42}
-\contentsline {subsection}{\numberline {4.2.2}引入新符号}{43}
-\contentsline {section}{\numberline {4.3}离散 傅立叶变换特性}{43}
-\contentsline {subsection}{\numberline {4.3.1}输入和输出的周期性}{43}
-\contentsline {subsection}{\numberline {4.3.2}离散复指数的正交性}{43}
-\contentsline {section}{\numberline {4.4}离散傅立叶逆变换}{44}
-\contentsline {section}{\numberline {4.5}离散傅立叶变换的性质}{45}
-\contentsline {subsection}{\numberline {4.5.1}离散傅立叶变换在零点}{45}
-\contentsline {subsection}{\numberline {4.5.2}典型离散信号}{45}
-\contentsline {subsubsection}{\numberline {4.5.2.1}$\relax $\@@underline {\hbox {1}}\mathsurround \z@ $\relax $}{45}
-\contentsline {subsubsection}{\numberline {4.5.2.2}$\relax $\@@underline {\hbox {\delta _0}}\mathsurround \z@ $\relax $}{45}
-\contentsline {subsubsection}{\numberline {4.5.2.3}$\relax $\@@underline {\hbox {\delta _k}}\mathsurround \z@ $\relax $}{45}
-\contentsline {subsubsection}{\numberline {4.5.2.4}$\relax $\@@underline {\hbox {\omega }}\mathsurround \z@ $\relax ^k$}{45}
-\contentsline {section}{\numberline {4.6}离散 傅立叶变换 矩阵}{46}
-\contentsline {subsection}{\numberline {4.6.1}定义}{46}
-\contentsline {subsection}{\numberline {4.6.2}转置共轭与离散傅立叶逆变换矩阵}{46}
-\contentsline {subsection}{\numberline {4.6.3}运算复杂度}{47}
-\contentsline {section}{\numberline {4.7}离散 傅立叶变换特性}{47}
-\contentsline {subsection}{\numberline {4.7.1}输入与输出离散信号周期性的证明}{47}
-\contentsline {subsubsection}{\numberline {4.7.1.1}离散 傅立叶变换 矩阵中}{47}
-\contentsline {subsubsection}{\numberline {4.7.1.2}离散傅立叶逆变换矩阵}{48}
-\contentsline {subsubsection}{\numberline {4.7.1.3}总结}{48}
-\contentsline {subsection}{\numberline {4.7.2}索引的独立性}{48}
-\contentsline {subsection}{\numberline {4.7.3}离散信号的反转及其离散 傅立叶变换的对偶性}{49}
-\contentsline {subsubsection}{\numberline {4.7.3.1}离散信号反转的定义}{49}
-\contentsline {subsubsection}{\numberline {4.7.3.2}离散 傅立叶变换对偶性讨论}{49}
-\contentsline {section}{\numberline {4.8}快速傅立叶变换}{50}
-\contentsline {subsection}{\numberline {4.8.1}矩阵简化}{50}
-\contentsline {subsubsection}{\numberline {4.8.1.1}复数矩阵}{50}
-\contentsline {subsubsection}{\numberline {4.8.1.2}傅立叶矩阵}{50}
-\contentsline {subsection}{\numberline {4.8.2}利用复指数的代数性质}{51}
-\contentsline {subsubsection}{\numberline {4.8.2.1}引入$\omega [p,q]$}{51}
-\contentsline {subsubsection}{\numberline {4.8.2.2}把离散傅立叶变换公式表达成奇偶项的形式}{52}
-\contentsline {subsection}{\numberline {4.8.3}总结}{53}
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}线性系统}{55}
-\contentsline {section}{\numberline {5.1}线性系统}{55}
-\contentsline {subsection}{\numberline {5.1.1}线性系统的基本定义}{55}
-\contentsline {subsection}{\numberline {5.1.2}离散有限维线性系统}{55}
-\contentsline {subsubsection}{\numberline {5.1.2.1}矩阵的乘法}{55}
-\contentsline {subsubsection}{\numberline {5.1.2.2}具有特征向量的线性系统矩阵}{55}
-\contentsline {subsection}{\numberline {5.1.3}连续无限维线性系统}{56}
-\contentsline {subsubsection}{\numberline {5.1.3.1}核函数的积分}{56}
-\contentsline {subsubsection}{\numberline {5.1.3.2}另外一种理解方式}{56}
-\contentsline {subsubsection}{\numberline {5.1.3.3}一些特殊的核函数}{57}
-\contentsline {section}{\numberline {5.2}脉冲响应}{57}
-\contentsline {subsection}{\numberline {5.2.1}级联线性系统（Cascading Linear System）}{57}
-\contentsline {subsection}{\numberline {5.2.2}脉冲相应的定义}{58}
-\contentsline {subsection}{\numberline {5.2.3}Schwartz核函数定理}{58}
-\contentsline {subsection}{\numberline {5.2.4}傅立叶变换的脉冲响应}{58}
-\contentsline {subsection}{\numberline {5.2.5}离散有限维线性系统的脉冲响应}{58}
-\contentsline {subsection}{\numberline {5.2.6}脉冲响应的例子——开关}{59}
-\contentsline {section}{\numberline {5.3}卷积、连续无限维线性时不变系统}{59}
-\contentsline {section}{\numberline {5.4}矩阵卷积、离散有限维线性时不变系统}{60}
-\contentsline {chapter}{\numberline {第六章\hspace {.3em}}高维傅立叶变换}{61}
-\contentsline {section}{\numberline {6.1}从一维傅立叶变换到二维傅立叶变换}{61}
-\contentsline {section}{\numberline {6.2}$N$维傅立叶变换}{61}
-\contentsline {section}{\numberline {6.3}深入理解多维傅立叶变换}{62}
-\contentsline {subsection}{\numberline {6.3.1}一维复指数}{62}
-\contentsline {subsection}{\numberline {6.3.2}二维复指数}{62}
-\contentsline {section}{\numberline {6.4}可分离函数}{62}
-\contentsline {subsection}{\numberline {6.4.1}$\Pi (x_1,x_2)$}{62}
-\contentsline {subsection}{\numberline {6.4.2}二维高斯函数}{62}
-\contentsline {subsection}{\numberline {6.4.3}径向函数}{62}
-\contentsline {section}{\numberline {6.5}多维傅立叶变换的卷积定理}{62}
-\contentsline {section}{\numberline {6.6}多维傅里叶变换的移位定理}{62}
-\contentsline {section}{\numberline {6.7}多维傅里叶变换缩放定理}{62}
-\contentsline {section}{\numberline {6.8}多维$\delta $函数}{62}
+\contentsline {section}{\numberline {1.4}欧拉公式}{11}
+\contentsline {section}{\numberline {1.5}傅立叶级数的对称性}{11}
+\contentsline {section}{\numberline {1.6}从三角函数到复指形}{11}
+\contentsline {subsection}{\numberline {1.6.1}从三角函数到复指形}{11}
+\contentsline {subsection}{\numberline {1.6.2}求解$c_k$}{12}
+\contentsline {subsection}{\numberline {1.6.3}傅立叶系数}{13}
+\contentsline {subsubsection}{\numberline {1.6.3.1}用新记号表示傅立叶系数}{13}
+\contentsline {subsubsection}{\numberline {1.6.3.2}$c_{-k}=\overline {c_k}$}{13}
+\contentsline {subsubsection}{\numberline {1.6.3.3}偶函数的傅立叶系数}{13}
+\contentsline {subsubsection}{\numberline {1.6.3.4}第$0$项傅立叶系数}{13}
+\contentsline {section}{\numberline {1.7}周期不为$1$的情况}{13}
+\contentsline {subsection}{\numberline {1.7.1}系数讨论}{13}
+\contentsline {subsection}{\numberline {1.7.2}傅立叶系数的积分范围}{14}
+\contentsline {subsection}{\numberline {1.7.3}频谱图像}{14}
+\contentsline {section}{\numberline {1.8}通用性验证}{14}
+\contentsline {subsection}{\numberline {1.8.1}实分析基础}{14}
+\contentsline {subsection}{\numberline {1.8.2}适用范围}{15}
+\contentsline {subsubsection}{\numberline {1.8.2.1}关于三角函数的讨论}{15}
+\contentsline {subsubsection}{\numberline {1.8.2.2}Dirichlet Condition}{15}
+\contentsline {subsubsection}{\numberline {1.8.2.3}有限求和}{15}
+\contentsline {subsection}{\numberline {1.8.3}收敛性}{15}
+\contentsline {subsubsection}{\numberline {1.8.3.1}$L^2$收敛}{15}
+\contentsline {subsubsection}{\numberline {1.8.3.2}收敛结论}{16}
+\contentsline {section}{\numberline {1.9}函数的内积}{16}
+\contentsline {subsection}{\numberline {1.9.1}函数内积计算方法}{16}
+\contentsline {subsection}{\numberline {1.9.2}与Vector类比}{16}
+\contentsline {section}{\numberline {1.10}傅立叶级数与矩阵}{16}
+\contentsline {subsection}{\numberline {1.10.1}空间内的Orthogonal Basis}{16}
+\contentsline {subsection}{\numberline {1.10.2}Orthogonal Basis}{17}
+\contentsline {subsubsection}{\numberline {1.10.2.1}三角函数的Orthogonal Basis}{17}
+\contentsline {subsubsection}{\numberline {1.10.2.2}复指函数的Orthogonal Basis}{17}
+\contentsline {subsection}{\numberline {1.10.3}求解傅立叶系数}{17}
+\contentsline {subsubsection}{\numberline {1.10.3.1}三角函数形}{17}
+\contentsline {subsubsection}{\numberline {1.10.3.2}复指函数形}{18}
+\contentsline {section}{\numberline {1.11}卷积}{18}
+\contentsline {subsection}{\numberline {1.11.1}定义}{18}
+\contentsline {subsection}{\numberline {1.11.2}卷积与偏微分方程}{19}
+\contentsline {subsection}{\numberline {1.11.3}图解卷积}{19}
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}傅立叶变换}{21}
+\contentsline {section}{\numberline {2.1}从傅立叶级数到傅立叶变换}{21}
+\contentsline {subsection}{\numberline {2.1.1}对于周期为1的函数}{21}
+\contentsline {subsection}{\numberline {2.1.2}对于周期为T的函数}{21}
+\contentsline {subsection}{\numberline {2.1.3}对于周期为$\infty $的函数}{21}
+\contentsline {section}{\numberline {2.2}新符号$\mathcal {F}$}{22}
+\contentsline {section}{\numberline {2.3}傅立叶变换和Inverse 傅立叶变换}{22}
+\contentsline {subsection}{\numberline {2.3.1}傅立叶变换}{22}
+\contentsline {subsubsection}{\numberline {2.3.1.1}两种书写方式}{22}
+\contentsline {subsubsection}{\numberline {2.3.1.2}注解}{23}
+\contentsline {subsection}{\numberline {2.3.2}傅立叶逆变换}{23}
+\contentsline {subsubsection}{\numberline {2.3.2.1}两种书写方式}{23}
+\contentsline {subsubsection}{\numberline {2.3.2.2}注解}{23}
+\contentsline {subsection}{\numberline {2.3.3}傅立叶变换和Inverse 傅立叶变换之间的关系}{23}
+\contentsline {subsection}{\numberline {2.3.4}零点的值}{23}
+\contentsline {section}{\numberline {2.4}傅立叶变换实例}{23}
+\contentsline {subsection}{\numberline {2.4.1}$\Pi $函数}{23}
+\contentsline {subsection}{\numberline {2.4.2}$\Lambda $函数}{24}
+\contentsline {subsection}{\numberline {2.4.3}$\Lambda $与$\Pi $之间的关系}{24}
+\contentsline {section}{\numberline {2.5}傅立叶变换的对称性}{24}
+\contentsline {subsubsection}{\numberline {2.5.0.1}奇偶虚实性}{24}
+\contentsline {subsection}{\numberline {2.5.1}时域和频域之间的对称关系}{25}
+\contentsline {subsection}{\numberline {2.5.2}反转信号}{25}
+\contentsline {subsection}{\numberline {2.5.3}对偶定理}{25}
+\contentsline {subsubsection}{\numberline {2.5.3.1}对偶定理1}{25}
+\contentsline {subsubsection}{\numberline {2.5.3.2}对偶定理2}{25}
+\contentsline {subsubsection}{\numberline {2.5.3.3}对偶定理3}{25}
+\contentsline {subsubsection}{\numberline {2.5.3.4}对偶定理4}{26}
+\contentsline {section}{\numberline {2.6}傅立叶变换的时延性}{26}
+\contentsline {section}{\numberline {2.7}傅立叶变换的尺度变化}{26}
+\contentsline {subsection}{\numberline {2.7.1}证明}{26}
+\contentsline {subsubsection}{\numberline {2.7.1.1}$a>0$时}{26}
+\contentsline {subsubsection}{\numberline {2.7.1.2}$a<0$时}{27}
+\contentsline {subsubsection}{\numberline {2.7.1.3}总结}{27}
+\contentsline {subsection}{\numberline {2.7.2}注解}{27}
+\contentsline {section}{\numberline {2.8}傅立叶变换的卷积}{27}
+\contentsline {subsection}{\numberline {2.8.1}线性处理}{27}
+\contentsline {subsection}{\numberline {2.8.2}频域相乘处理}{27}
+\contentsline {section}{\numberline {2.9}滤波}{28}
+\contentsline {subsection}{\numberline {2.9.1}滤波器}{28}
+\contentsline {subsection}{\numberline {2.9.2}常见滤波器}{28}
+\contentsline {section}{\numberline {2.10}傅立叶变换的导数定理}{29}
+\contentsline {subsection}{\numberline {2.10.1}$\mathcal {F}f'(s)=2\cdot \pi \cdot i\cdot s\cdot \mathcal {F}f(s)$}{29}
+\contentsline {subsection}{\numberline {2.10.2}$(f*g)'=f'*g$}{29}
+\contentsline {section}{\numberline {2.11}正态分布}{29}
+\contentsline {subsection}{\numberline {2.11.1}正态分布与标准分布}{29}
+\contentsline {subsection}{\numberline {2.11.2}归一化的高斯函数$f(t)=e^{-\pi \cdot t^2}$}{29}
+\contentsline {subsubsection}{\numberline {2.11.2.1}对$f(t)=e^{-\pi \cdot t^2}$求$[0,1]$上的积分}{29}
+\contentsline {subsubsection}{\numberline {2.11.2.2}对$f(t)=e^{-\pi \cdot t^2}$求傅立叶变换}{30}
+\contentsline {section}{\numberline {2.12}分布与卷积}{30}
+\contentsline {section}{\numberline {2.13}傅立叶变换与中心极限定理}{31}
+\contentsline {subsection}{\numberline {2.13.1}中心极限定理}{31}
+\contentsline {subsubsection}{\numberline {2.13.1.1}傅立叶变换中}{31}
+\contentsline {subsubsection}{\numberline {2.13.1.2}CLT中}{31}
+\contentsline {subsection}{\numberline {2.13.2}卷积对函数的作用概览}{31}
+\contentsline {subsection}{\numberline {2.13.3}中心极限定理的推导过程}{32}
+\contentsline {subsubsection}{\numberline {2.13.3.1}初始条件}{32}
+\contentsline {subsubsection}{\numberline {2.13.3.2}解答}{32}
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}广义傅立叶变换}{33}
+\contentsline {section}{\numberline {3.1}传统傅立叶变换所存在的问题}{33}
+\contentsline {subsection}{\numberline {3.1.1}传统傅立叶变换所存在的问题}{33}
+\contentsline {subsection}{\numberline {3.1.2}问题例子}{33}
+\contentsline {subsubsection}{\numberline {3.1.2.1}例子1}{33}
+\contentsline {subsubsection}{\numberline {3.1.2.2}例子2}{33}
+\contentsline {section}{\numberline {3.2}Schwartz Space}{34}
+\contentsline {subsection}{\numberline {3.2.1}定义}{34}
+\contentsline {subsection}{\numberline {3.2.2}性质}{34}
+\contentsline {section}{\numberline {3.3}Parserval等式}{34}
+\contentsline {subsection}{\numberline {3.3.1}定义}{34}
+\contentsline {subsection}{\numberline {3.3.2}注解}{34}
+\contentsline {subsection}{\numberline {3.3.3}证明}{34}
+\contentsline {section}{\numberline {3.4}脉冲函数$\delta $}{35}
+\contentsline {subsection}{\numberline {3.4.1}如何得到$\delta $}{35}
+\contentsline {subsection}{\numberline {3.4.2}脉冲函数的性质}{35}
+\contentsline {subsection}{\numberline {3.4.3}$\delta $的移位}{35}
+\contentsline {subsection}{\numberline {3.4.4}$\delta $的抽样特性}{35}
+\contentsline {subsection}{\numberline {3.4.5}$\delta $的平移特性}{36}
+\contentsline {subsection}{\numberline {3.4.6}函数$f$与$\delta _a$进行卷积}{36}
+\contentsline {subsection}{\numberline {3.4.7}$\delta $的缩放特性}{36}
+\contentsline {section}{\numberline {3.5}分布}{36}
+\contentsline {subsection}{\numberline {3.5.1}测试函数$\phi $}{37}
+\contentsline {subsection}{\numberline {3.5.2}广义函数Generalized Function}{37}
+\contentsline {subsection}{\numberline {3.5.3}匹配}{37}
+\contentsline {subsection}{\numberline {3.5.4}分布的性质}{37}
+\contentsline {section}{\numberline {3.6}分布傅立叶变换}{37}
+\contentsline {subsection}{\numberline {3.6.1}缓增函数}{37}
+\contentsline {subsection}{\numberline {3.6.2}缓增函数的傅立叶变换}{37}
+\contentsline {subsubsection}{\numberline {3.6.2.1}定义}{37}
+\contentsline {subsubsection}{\numberline {3.6.2.2}证明}{38}
+\contentsline {subsection}{\numberline {3.6.3}分布傅立叶变换的例子}{38}
+\contentsline {subsubsection}{\numberline {3.6.3.1}$\mathcal {F}\sigma $}{38}
+\contentsline {subsubsection}{\numberline {3.6.3.2}$\mathcal {F}\sigma _a$}{38}
+\contentsline {subsubsection}{\numberline {3.6.3.3}$\mathcal {F}e^{2\cdot \pi \cdot i\cdot a\cdot x}$}{38}
+\contentsline {subsubsection}{\numberline {3.6.3.4}$\mathcal {F}\qopname \relax o{cos}(2\cdot \pi \cdot a\cdot x)$}{39}
+\contentsline {subsubsection}{\numberline {3.6.3.5}$\mathcal {F}\qopname \relax o{sin}(2\cdot \pi \cdot a\cdot x)$}{39}
+\contentsline {section}{\numberline {3.7}分布与导数}{39}
+\contentsline {subsection}{\numberline {3.7.1}相关定理}{39}
+\contentsline {subsubsection}{\numberline {3.7.1.1}分布的导数}{39}
+\contentsline {subsubsection}{\numberline {3.7.1.2}分布傅立叶变换的导数定理}{39}
+\contentsline {subsection}{\numberline {3.7.2}利用分布求导数的例子}{40}
+\contentsline {subsubsection}{\numberline {3.7.2.1}单位跃阶函数（Unit Step function）}{40}
+\contentsline {subsubsection}{\numberline {3.7.2.2}有符号函数（Signum function）}{40}
+\contentsline {subsection}{\numberline {3.7.3}利用导数求傅立叶变换}{41}
+\contentsline {subsubsection}{\numberline {3.7.3.1}$\sgn $的傅立叶变换}{41}
+\contentsline {subsubsection}{\numberline {3.7.3.2}$U$的傅立叶变换}{41}
+\contentsline {section}{\numberline {3.8}分布的乘积}{41}
+\contentsline {section}{\numberline {3.9}分布与卷积}{41}
+\contentsline {subsection}{\numberline {3.9.1}分布的卷积}{41}
+\contentsline {subsection}{\numberline {3.9.2}分布的卷积定理}{42}
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}离散傅立叶变换}{43}
+\contentsline {section}{\numberline {4.1}离散傅立叶变换}{43}
+\contentsline {subsection}{\numberline {4.1.1}$f(t)$的离散近似}{43}
+\contentsline {subsection}{\numberline {4.1.2}$\mathcal {F}f(s)$的离散近似}{43}
+\contentsline {subsection}{\numberline {4.1.3}从$f(t)$的离散近似到$\mathcal {F}f(s)$的离散近似}{44}
+\contentsline {section}{\numberline {4.2}对得到的离散傅立叶变换公式化简}{44}
+\contentsline {subsection}{\numberline {4.2.1}时域和频域的倒数关系}{44}
+\contentsline {subsection}{\numberline {4.2.2}引入新符号}{45}
+\contentsline {section}{\numberline {4.3}离散 傅立叶变换特性}{45}
+\contentsline {subsection}{\numberline {4.3.1}输入和输出的周期性}{45}
+\contentsline {subsection}{\numberline {4.3.2}离散复指数的正交性}{45}
+\contentsline {section}{\numberline {4.4}离散傅立叶逆变换}{46}
+\contentsline {section}{\numberline {4.5}离散傅立叶变换的性质}{47}
+\contentsline {subsection}{\numberline {4.5.1}离散傅立叶变换在零点}{47}
+\contentsline {subsection}{\numberline {4.5.2}典型离散信号}{47}
+\contentsline {subsubsection}{\numberline {4.5.2.1}$\relax $\@@underline {\hbox {1}}\mathsurround \z@ $\relax $}{47}
+\contentsline {subsubsection}{\numberline {4.5.2.2}$\relax $\@@underline {\hbox {\delta _0}}\mathsurround \z@ $\relax $}{47}
+\contentsline {subsubsection}{\numberline {4.5.2.3}$\relax $\@@underline {\hbox {\delta _k}}\mathsurround \z@ $\relax $}{47}
+\contentsline {subsubsection}{\numberline {4.5.2.4}$\relax $\@@underline {\hbox {\omega }}\mathsurround \z@ $\relax ^k$}{47}
+\contentsline {section}{\numberline {4.6}离散 傅立叶变换 矩阵}{48}
+\contentsline {subsection}{\numberline {4.6.1}定义}{48}
+\contentsline {subsection}{\numberline {4.6.2}转置共轭与离散傅立叶逆变换矩阵}{48}
+\contentsline {subsection}{\numberline {4.6.3}运算复杂度}{49}
+\contentsline {section}{\numberline {4.7}离散 傅立叶变换特性}{49}
+\contentsline {subsection}{\numberline {4.7.1}输入与输出离散信号周期性的证明}{49}
+\contentsline {subsubsection}{\numberline {4.7.1.1}离散 傅立叶变换 矩阵中}{49}
+\contentsline {subsubsection}{\numberline {4.7.1.2}离散傅立叶逆变换矩阵}{50}
+\contentsline {subsubsection}{\numberline {4.7.1.3}总结}{50}
+\contentsline {subsection}{\numberline {4.7.2}索引的独立性}{50}
+\contentsline {subsection}{\numberline {4.7.3}离散信号的反转及其离散 傅立叶变换的对偶性}{51}
+\contentsline {subsubsection}{\numberline {4.7.3.1}离散信号反转的定义}{51}
+\contentsline {subsubsection}{\numberline {4.7.3.2}离散 傅立叶变换对偶性讨论}{51}
+\contentsline {section}{\numberline {4.8}快速傅立叶变换}{52}
+\contentsline {subsection}{\numberline {4.8.1}矩阵简化}{52}
+\contentsline {subsubsection}{\numberline {4.8.1.1}复数矩阵}{52}
+\contentsline {subsubsection}{\numberline {4.8.1.2}傅立叶矩阵}{52}
+\contentsline {subsection}{\numberline {4.8.2}利用复指数的代数性质}{53}
+\contentsline {subsubsection}{\numberline {4.8.2.1}引入$\omega [p,q]$}{53}
+\contentsline {subsubsection}{\numberline {4.8.2.2}把离散傅立叶变换公式表达成奇偶项的形式}{54}
+\contentsline {subsection}{\numberline {4.8.3}总结}{55}
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}线性系统}{57}
+\contentsline {section}{\numberline {5.1}线性系统}{57}
+\contentsline {subsection}{\numberline {5.1.1}线性系统的基本定义}{57}
+\contentsline {subsection}{\numberline {5.1.2}离散有限维线性系统}{57}
+\contentsline {subsubsection}{\numberline {5.1.2.1}矩阵的乘法}{57}
+\contentsline {subsubsection}{\numberline {5.1.2.2}具有特征向量的线性系统矩阵}{57}
+\contentsline {subsection}{\numberline {5.1.3}连续无限维线性系统}{58}
+\contentsline {subsubsection}{\numberline {5.1.3.1}核函数的积分}{58}
+\contentsline {subsubsection}{\numberline {5.1.3.2}另外一种理解方式}{58}
+\contentsline {subsubsection}{\numberline {5.1.3.3}一些特殊的核函数}{59}
+\contentsline {section}{\numberline {5.2}脉冲响应}{59}
+\contentsline {subsection}{\numberline {5.2.1}级联线性系统（Cascading Linear System）}{59}
+\contentsline {subsection}{\numberline {5.2.2}脉冲相应的定义}{60}
+\contentsline {subsection}{\numberline {5.2.3}Schwartz核函数定理}{60}
+\contentsline {subsection}{\numberline {5.2.4}傅立叶变换的脉冲响应}{60}
+\contentsline {subsection}{\numberline {5.2.5}离散有限维线性系统的脉冲响应}{60}
+\contentsline {subsection}{\numberline {5.2.6}脉冲响应的例子——开关}{61}
+\contentsline {section}{\numberline {5.3}卷积、连续无限维线性时不变系统}{61}
+\contentsline {section}{\numberline {5.4}矩阵卷积、离散有限维线性时不变系统}{62}
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}高维傅立叶变换}{63}
+\contentsline {section}{\numberline {6.1}从一维傅立叶变换到二维傅立叶变换}{63}
+\contentsline {section}{\numberline {6.2}$N$维傅立叶变换}{63}
+\contentsline {section}{\numberline {6.3}深入理解多维傅立叶变换}{64}
+\contentsline {subsection}{\numberline {6.3.1}一维复指数}{64}
+\contentsline {subsection}{\numberline {6.3.2}二维复指数}{64}
+\contentsline {section}{\numberline {6.4}可分离函数}{64}
+\contentsline {subsection}{\numberline {6.4.1}$\Pi (x_1,x_2)$}{64}
+\contentsline {subsection}{\numberline {6.4.2}二维高斯函数}{64}
+\contentsline {subsection}{\numberline {6.4.3}径向函数}{64}
+\contentsline {section}{\numberline {6.5}多维傅立叶变换的卷积定理}{64}
+\contentsline {section}{\numberline {6.6}多维傅里叶变换的移位定理}{64}
+\contentsline {section}{\numberline {6.7}多维傅里叶变换缩放定理}{64}
+\contentsline {section}{\numberline {6.8}多维$\delta $函数}{64}
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}信号与系统}{65}
+\contentsline {section}{\numberline {7.1}连续系统与离散系统}{65}
+\contentsline {subsection}{\numberline {7.1.1}单输入单输出连续系统}{65}
+\contentsline {subsection}{\numberline {7.1.2}单输入单输出离散系统}{65}
+\contentsline {subsection}{\numberline {7.1.3}连续离散与模拟数字}{65}
+\contentsline {subsubsection}{\numberline {7.1.3.1}连续和离散}{65}
+\contentsline {subsubsection}{\numberline {7.1.3.2}模拟和数字}{66}
+\contentsline {section}{\numberline {7.2}线性系统}{66}
+\contentsline {subsection}{\numberline {7.2.1}连续系统}{66}
+\contentsline {subsection}{\numberline {7.2.2}离散系统}{66}
+\contentsline {section}{\numberline {7.3}时／移不变系统}{66}
+\contentsline {subsection}{\numberline {7.3.1}时不变系统}{66}
+\contentsline {subsection}{\numberline {7.3.2}移不变系统}{66}
+\contentsline {section}{\numberline {7.4}线性系统对激励的响应}{66}
+\contentsline {subsection}{\numberline {7.4.1}离散系统对激励的响应}{67}
+\contentsline {subsubsection}{\numberline {7.4.1.1}离散$\delta $信号}{67}
+\contentsline {subsubsection}{\numberline {7.4.1.2}离散卷积}{67}
+\contentsline {subsubsection}{\numberline {7.4.1.3}因果系统}{67}
+\contentsline {subsection}{\numberline {7.4.2}连续系统对激励的响应}{68}
+\contentsline {subsubsection}{\numberline {7.4.2.1}连续$\delta $信号}{68}
+\contentsline {subsubsection}{\numberline {7.4.2.2}连续卷积}{68}
+\contentsline {subsubsection}{\numberline {7.4.2.3}因果系统}{68}
+\contentsline {section}{\numberline {7.5}卷积的性质}{69}
+\contentsline {subsection}{\numberline {7.5.1}交换率}{69}
+\contentsline {subsection}{\numberline {7.5.2}分配率}{69}
+\contentsline {subsection}{\numberline {7.5.3}结合率}{69}
+\contentsline {subsection}{\numberline {7.5.4}与冲激函数卷积}{69}

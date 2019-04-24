@@ -1,6 +1,8 @@
 \chapter{傅立叶级数}
 \section{波的时域与空域}
 当谈到频率的时候，一定假定主体是一个周期信号，这意味着信号的时间是从负无穷持续到正无穷，这时时间就不再是一个变量。
+
+For example, you stand at a ﬁxed point in the ocean (or on an electrical circuit) and the waves (or the electrical current) wash over you with a regular, recurring pattern of crests and troughs. The height of the wave is a periodic function of time. Sound is another example: “sound” reaches your ear as a longitudinal pressure wave, a periodic compression and rarefaction of the air. In the case of space, you come to the phenomenon. You take a picture and you observe repeating patterns.
 \begin{enumerate}
 	\item 空间固定，使用频率表示一秒内经过多少个波；
 	\item 时间固定，使用周期描述波在空间上的分布；
@@ -35,6 +37,7 @@
 
 从这个例子可以看出，输入是一个余弦信号，输出也是一个余弦信号。只是幅度和相位有了一定改变，但是频率没有变。
 \subsection{One period, many frequencies.}
+Is the sum of two periodic functions periodic?
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{assets/Figure_1.png}
@@ -45,6 +48,7 @@
 	      \begin{equation}\label{vtri}
 		      f(t)=\sum\limits_{k=1}^n\ A_k\cdot \sin(2\cdot \pi\cdot k\cdot t+\phi_k)
 	      \end{equation}
+	      This form of a general trigonometric sum has the advantage of displaying explicitly the amplitude and phase of each harmonic, but it turns out to be somewhat awkward to calculate with.
 
 	      这里使用$\cos$也没有关系，但是这节课里就钦定了$\sin$。
 	\item 由上图可以看出，整体的函数在周期最长的函数重复的时候才重复，可以说周期最长的函数奠定了整个函数的基调。$k=1​$时，$T=\frac{2\cdot \pi}{2\cdot \pi}=1​$，周期最长，所以$k=1​$的项被称为fundamental wave。而$k>1​$的项被称为harmonic wave。
@@ -72,17 +76,24 @@ $$
 $$
 
 所以我们得到：
-\begin{equation}\label{vtrii}
+\begin{equation}
 	f(t) =\sum\limits_{k=1}^n\ [a_k\cdot \sin(2\cdot\pi\cdot k\cdot t) +b_k\cdot \cos(2\cdot \pi\cdot k\cdot t)]
 \end{equation}
+
+我们还可以给它加一个直流分量$\frac{A_0}{2}$：
+\begin{equation}\label{vtrii}
+	f(t) =\sum\limits_{k=1}^n\ [a_k\cdot \sin(2\cdot\pi\cdot k\cdot t) +b_k\cdot \cos(2\cdot \pi\cdot k\cdot t)]+\frac{A_0}{2}
+\end{equation}
+
+这里为啥直流分量取$\frac{A_0}{2}$后面会说。
 \subsection{复指形式表示}
-因为根据\ref{vtrii}的展开，所以我们令（为什么这么令我也不知道，反正老师就是突然跳到这一步。他想怎么干就怎么干吧……）：
+因为根据\eqref{vtrii}的展开，所以我们令（为什么这么令我也不知道，反正老师就是突然跳到这一步。他想怎么干就怎么干吧……）：
 \begin{equation}
 	f(t)=\sum\limits_{k=-n}^n\ c_k\cdot e^{2\cdot \pi \cdot i \cdot k \cdot t}
 \end{equation}
 
-\section{傅立叶级数的对称性}
-\subsection{欧拉公式Euler's Formula}
+注意到，当$k=0$时，$f(t)=\frac{A_0}{2}=c_0=\overline{c_0}$。
+\section{欧拉公式}
 \begin{equation}
 	e^{2\cdot \pi\cdot i\cdot k\cdot t} =  \cos(2\cdot \pi\cdot k\cdot t)+i\cdot \sin(2\cdot \pi\cdot k\cdot t)
 \end{equation}
@@ -92,7 +103,8 @@ $$
 \begin{equation}
 	\sin(2\cdot \pi\cdot k\cdot t)=\frac{e^{2\cdot \pi\cdot i\cdot k\cdot t+}-e^{-2\cdot \pi\cdot i\cdot k\cdot t}}{2\cdot i}
 \end{equation}
-\subsection{傅立叶级数的对称性}
+\section{傅立叶级数的对称性}
+
 假设​信号是一个实信号（real 信号），则信号中没有虚部，有​$f(t)=\overline {f(t)}$：
 \begin{align*}
 	  & f(t)                                                                                        \\
@@ -185,12 +197,22 @@ $$
 	c_m=\int_0^1\ [e^{-2\cdot \pi\cdot i\cdot m\cdot t}\cdot f(t)-\sum\limits_{k\neq m}^\infty\ c_k\cdot e^{2\cdot \pi\cdot i\cdot (k-m)\cdot t}]\ dt
 $$
 
-因为$k\neq m$，所以$\int_0^1\ e^{2\cdot \pi\cdot i\cdot (k-m)\cdot t}\ dt=0$（该结论的证明后面有）。所以有：
+因为$k\neq m$，所以$\int_0^1\ e^{2\cdot \pi\cdot i\cdot (k-m)\cdot t}\ dt=0$。所以有：
 $$
 	c_m=\int_0^1 \ e^{-2\cdot \pi\cdot i\cdot m\cdot t}\cdot f(t)\ dt
 $$
+\begin{quote}
+	重要证明如下：
+	\begin{align*}
+		  & \int_{0}^{1}e^{2\pi i(n-k)t}dt                          \\
+		= & \frac{1}{2\pi i(n-k)}e^{2\pi i(n-k)t}]_{t=0}^{t=1}      \\
+		= & \frac{1}{2\pi i(n-k)}\left(e^{2\pi i(n-k)}-e^{0}\right) \\
+		= & \frac{1}{2\pi i(n-k)}(1-1)=0
+	\end{align*}
+\end{quote}
 
 \subsection{傅立叶系数}
+\subsubsection{用新记号表示傅立叶系数}
 我们用新记号$\hat{f}(k)$表示$c_k$：
 \begin{equation}
 	\hat{f}(k)=\int_0^1 \ e^{-2\cdot \pi\cdot i\cdot m\cdot t}\cdot f(t)\ dt
@@ -209,8 +231,124 @@ $$
 	\item $k​$为频域变量，在分析时域的时候作为常数处理；
 	\item $t$为时域变量，在分析频域时作为常数处理。
 \end{enumerate}
+
+\subsubsection{$c_{-k}=\overline{c_k}$}
+
+\begin{align*}
+	  & \overline{c_k}= \overline{\int_0^1\ e^{-2\cdot \pi\cdot i\cdot k\cdot t}\cdot f(t)\ dt} \\
+	= & \int_0^1\ \overline{e^{-2\cdot\pi\cdot i\cdot k\cdot t}}\cdot \overline{f(t)}\ dt       \\
+	= & \int_0^1\ e^{-2\cdot\pi\cdot i\cdot k\cdot t}\cdot f(t)\ dt                             \\
+	= & c_{-k}
+\end{align*}
+\subsubsection{偶函数的傅立叶系数}
+当函数是偶函数时，所有的傅立叶系数为实数：
+
+\begin{align*}
+	  & \overline{\hat{f}(k)}= \hat{f}(-k)                                           \\
+	= & \int_0^1\ e^{-2\cdot\pi\cdot i\cdot(-k)\cdot t}\cdot f(t)\ dt                \\
+	= & \int_0^1\ e^{2\cdot\pi\cdot i\cdot k\cdot t}\cdot f(t)\ dt                   \\
+	= & -\int_0^{-1}\ e^{-2\cdot\pi\cdot i\cdot k\cdot s}\cdot f(-s)\ ds             \\
+	  & (\text{substituting}\ t = −s\ \text{and changing  limits  accordingly.} )    \\
+	= & \int_{-1}^0\ e^{-2\cdot\pi\cdot i\cdot k\cdot s}\cdot f(-s)\ ds = \hat{f}(n)
+\end{align*}
+
+\subsubsection{第$0$项傅立叶系数}
+\begin{equation}
+	\hat{f}(0)=\int_0^1\ f(t)\ dt
+\end{equation}
+
+这里同时也证明了当信号是实信号的时候，$\hat{f}(0)=c_0$是实数。
+\section{周期不为$1$的情况}
+\subsection{系数讨论}
+$f(t)$为周期为$T$的函数，我们做如下替换：
+\begin{equation}
+	g(t)=f(T\cdot t)
+\end{equation}
+
+这样$g(t)$是周期为$1$的函数。我们把$g(t)$展开：
+$$
+	g(t)=\sum\limits_{k=-\infty}^\infty\ \hat{g}(k)\cdot e^{2\cdot \pi\cdot i\cdot k\cdot t }
+$$
+
+我们用$s=T\cdot t$替换，这样$g(t)=f(s)$：
+\begin{align*}
+	  & f(s)=g(t)=\sum\limits_{k=-\infty}^\infty\ \hat{f}(k)\cdot e^{2\cdot \pi\cdot i\cdot k\cdot t } \\
+	= & \sum_{k=-\infty}^\infty\ \hat{f}(s)\cdot e^{\frac{2\cdot\pi\cdot i\cdot k\cdot s}{T}}
+\end{align*}
+
+傅立叶系数如下：
+$$
+	\hat{f}(s)=\frac{1}{T}\cdot \int_0^T\ e^{\frac{-2\cdot\pi\cdot i\cdot k\cdot s}{T}}\cdot f(s)\ ds
+$$
+
+由下面的傅立叶系数的积分范围讨论可知，也可以写成这样：
+$$
+	\hat{f}(s)=\frac{1}{T}\cdot \int_{-\frac{T}{2}}^{\frac{T}{2}}\ e^{\frac{-2\cdot\pi\cdot i\cdot k\cdot s}{T}}\cdot f(s)\ ds
+$$
+\subsection{傅立叶系数的积分范围}
+\begin{align*}
+	  & \frac{d}{da}\left(\int_{a}^{a+1}\ e^{-2\cdot \pi\cdot i\cdot k\cdot t}\cdot f(t)\ dt\right)                                        \\
+	= & e^{-2\cdot \pi\cdot i\cdot k\cdot (a+1)}\cdot f(a+1)-e^{-2\cdot \pi\cdot i\cdot k\cdot a}\cdot f(a)                                \\
+	= & e^{-2\cdot \pi\cdot i\cdot k\cdot a}\cdot e^{-2\cdot \pi\cdot i\cdot k}\cdot f(a+1)-e^{-2\cdot \pi\cdot i\cdot k\cdot a}\cdot f(a) \\
+	= & e^{-2\cdot \pi\cdot i\cdot k\cdot a}\cdot f(a)-e^{-2\cdot \pi\cdot i\cdot k\cdot a}\cdot f(a)                                      \\
+	  & \text{(using}\quad e^{-2\pi ik}=1\quad \text{and}\quad f(a+1)=f(a))                                                                \\
+	= & 0
+\end{align*}
+
+换句话说，积分$\int_{a}^{a+1}\ e^{-2\cdot \pi\cdot i\cdot k\cdot t}\cdot f(t)\ dt$与$a$无关。因此积分上下界取多少没有关系，只要差值为$1$（即周期）就可以了。
+\subsection{频谱图像}
+In the time domain the signal repeats after $T$ seconds, while the points in the spectrum are $0, \pm 1/T, \pm 2/T,\cdots ,$ which are spaced $1/T$ apart.
+
+The larger the period in time the smaller the spacing of the spectrum. The smaller the period in time, the larger the spacing of the spectrum.
+
+If you allow yourself to imagine letting $T\rightarrow\infty$ you can allow yourself to imagine the discrete set of frequencies becoming a continuum of frequencies.
 \section{通用性验证}
+\subsection{实分析基础}
+When $f(t)$ is a signal defined on $[0,1]$ the energy of the signal is defined to be the integral:
+
+\begin{equation}
+	\int_0^1\ |f(t)|^2\ dt
+\end{equation}
+
+I'm writing the deﬁnition in terms of the integral
+of the absolute value squared $|f(t)| ^2$ rather than
+just $f(t) ^2$ because we'll want to consider the
+deﬁnition to apply to COMPLEX VALUED FUNCTIONS.
+For real-valued functions it doesn't matter whether
+we integrate $|f(t)|^2 $or $f(t) ^2$ .
+\begin{enumerate}
+	\item For mathematical reasons, primarily, it's best to take the square root of the integral, and to deﬁne
+	      $$
+		      \| f \| = \left( \int _ { 0 } ^ { 1 } | f ( t ) | ^ { 2 } d t \right) ^ { 1 / 2 }
+	      $$
+	\item $\| \alpha f \| = \| \alpha \| \| f \|$
+	\item $\| f + g \| \leq \| f \| + \| g \|$
+	      特别的，我们有：
+	      \begin{align*}
+		           & \left( \int _ { 0 } ^ { 1 } | f ( t ) + g ( t ) | ^ { 2 } d t \right) ^ { 1 / 2 }                                                                 \\
+		      \leq & \left( \int _ { 0 } ^ { 1 } | f ( t ) | ^ { 2 } d t \right) ^ { 1 / 2 } + \left( \int _ { 0 } ^ { 1 } | g ( t ) | ^ { 2 } d t \right) ^ { 1 / 2 }
+	      \end{align*}
+
+	\item We can measure the distance between two functions via:
+	      $$
+		      \| f - g \| = \left( \int _ { 0 } ^ { 1 } | f ( t ) - g ( t ) | ^ { 2 } d t \right) ^ { 1 / 2 }
+	      $$
+
+	      Then $\|f-g\|=0$ if and only if $f = g$.
+	\item We let $L^2 ([0, 1])$ be the set of functions $f(t)$ on $[0, 1]$ for which:
+	      $$
+		      \int_0^1\ |f(t)|^2\ dt<\infty
+	      $$
+
+	      The "L" stands for Lebesgue, the French mathematician who introduced a new deﬁnition of the integral that underlies the analytic aspects of the results we're about to talk about. His work was around the turn of the 20-th century.
+
+	      The length we've just introduced, $\|f\|$,
+	      is called the square norm or the $L^2 ([0, 1])-norm$ of the function.
+	      When we want to distinguish this from other norms that might (and will) come up, we write $\|f\|_2$ .
+\end{enumerate}
+
 \subsection{适用范围}
+
 \subsubsection{关于三角函数的讨论}
 \begin{enumerate}
 	\item 由于三角函数是连续的，因此有限项级数不能表示离散的函数；
@@ -231,12 +369,14 @@ $$
 We can use high frequencies to make sharp corners. There is a discontinuity in some high derivative that means that you are going to have trouble repeating that phenomenon as a finite sum. You are going to take N layers and layers to try to represent it more and more accurately.
 \subsection{收敛性}
 为什么要讨论收敛？任何非平滑的信号都会产生无限多个傅立叶级数。如果在有限项后截断来得到函数近似，万一级数不收敛于$f(t)$，情况就很糟糕。
-\subsubsection{$L_2$收敛}
+\subsubsection{$L^2$收敛}
+It's true that if $f(t)$ is in $L^2 ([0, 1])$ then the integral deﬁning its Fourier coeﬃcients exists.
+
 一般信号（也包括上述两种情况）的收敛性在分析的时候，不采用逐点判断收敛性的方法，用均方收敛（convergence in the mean）。
 
 如果$\int_{0}^{1}\ |f(t)|^2\ dt<\infty$，且：$\int_{0}^{1}\ |\sum\limits_{k=-n}^{n}\ \hat{f}(k)\cdot e^{-2\cdot \pi\cdot i\cdot k\cdot t\ dt-f(t)}|^2\rightarrow 0\ if\ n\rightarrow \infty$，则可表示为：
 $$
-	f\in L_2([0,1])
+	f\in L^2([0,1])
 $$
 \subsubsection{收敛结论}
 \begin{enumerate}
@@ -250,7 +390,7 @@ $$
 \end{enumerate}
 \section{函数的内积}
 \subsection{函数内积计算方法}
-设有复变函数$f,g\in L_2([0,1])$，那么可以把$f,g$分别认为是Vector。求这两个Vector内积的方法为：
+设有复变函数$f,g\in L^2([0,1])$，那么可以把$f,g$分别认为是Vector。求这两个Vector内积的方法为：
 \begin{equation}
 	(f,g)=\int_0^1\ f(t)\overline{g(t)}\ dt
 \end{equation}

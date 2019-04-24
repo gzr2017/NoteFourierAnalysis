@@ -1,0 +1,263 @@
+%TODO:https://www.zhihu.com/question/20500497
+\chapter{信号与系统}
+不管是汽车发动机，还是电路，都可以抽象成一个系统。一个系统，有输入信号，也有输出信号，输入和输出之间满足一定的关系。信号与系统，就是研究系统的输入和输出之间的变化规律的科学。
+\section{连续系统与离散系统}
+\subsection{单输入单输出连续系统}
+系统有一个输入信号，表达为$x(t)$，一个输出信号，表达为$y(t)$输入和输出信号之间存在一定的关系，表达为：
+\begin{equation}
+	y(t)=H{x(t)}
+\end{equation}
+
+\begin{quote}
+	从公式上看函数与系统非常相似，不同之处仅在于系统的输入、输出信号都是时间变量t的函数。
+
+	函数表达的是因变量y随着自变量x的变化规律，而x和y本身是静态的。在系统当中，因为有时间变量的存在，输入和输出都是随着时间变化的，其表达的相互关系不只是某一个时刻的关系，而是一段时间内的关系。
+
+	更具体一点地说，在某一时刻系统的输出值，不仅与该时刻的输入有关，还可能与历史的输入有关。
+\end{quote}
+
+
+\subsection{单输入单输出离散系统}
+输入信号$x[n]$，经过离散系统的变换后，输出信号为$y[n]$,其中$n$为整数，可以记作：
+\begin{equation}
+	y[n]=H{x[n]}
+\end{equation}
+
+\subsection{连续离散与模拟数字}
+\subsubsection{连续和离散}
+连续和离散，是从自变量的角度去区别的。
+\begin{enumerate}
+	\item 连续信号：以连续时间变量t为自变量的函数；
+	\item 连续系统：以连续信号为输入输出的系统就是连续系统；
+	\item 离散信号：可以由连续信号在离散的时间点上取样获得；
+
+	      一个均匀采样的离散信号表达为：
+	      \begin{equation}
+		      x[n]=x(n\cdot \Delta t)
+	      \end{equation}
+
+	      这里采用方括号表示离散信号，圆括号表示连续信号。
+
+	      $n$为整数，可以为正，可以为负，可以为零。
+	\item 离散系统：以离散信号为输入输出的系统就是离散系统。
+\end{enumerate}
+\subsubsection{模拟和数字}
+模拟和数字，是从因变量的取值上去区别的。
+\begin{enumerate}
+	\item 模拟信号：取值范围是实数域；
+	\item 数字信号：用有限位的O和1来表达一个值，有一定的表示精度。
+	\item 连续信号经过采样成为离散信号，这个时候还是模拟的，再经过A／D转换器后用有限的位数去表达从而成为数字信号。
+	\item 基本上所有的离散信号都会进行数字化处理。
+\end{enumerate}
+\section{线性系统}
+线性系统是指具有下面两个性质的系统：
+\begin{enumerate}
+	\item 叠加性
+	      系统对两个信号的和的输出，等于两个信号输出的和；
+	\item 数乘性
+	      如果输入信号放大$\alpha$倍，则输出信号也放大$\alpha$倍。
+\end{enumerate}
+\subsection{连续系统}
+\begin{equation}
+	H[x_1(t)+x_2(t)]=H[x_1(t)]+H[x_2(t)]
+\end{equation}
+\begin{equation}
+	H[\alpha\cdot x(t)]=\alpha\cdot H[x(t)]
+\end{equation}
+\subsection{离散系统}
+\begin{equation}
+	H\{x_1[n]+x_2[n]\}=H\{x_1[n]\}+H\{x_2[n]\}
+\end{equation}
+\begin{equation}
+	H\{\alpha\cdot x[n]\}=\alpha\cdot H\{x[n]\}
+\end{equation}
+\section{时／移不变系统}
+\subsection{时不变系统}
+时不变系统是指具有下面性质的连续系统：
+
+如果$y(t)=H\{x(t)\}$，则$y(t-\tau)=H\{x(t-\tau)\}$。
+
+意思是说，如果输入信号延时了一段时间$\tau$那么输出信号也延时相同的时间。
+
+在函数的概念里面，函数是固定的，这种变量的代换可以随便做。然而对于一个系统，它对输入信号的响应可能随着时间的变化而变化。
+\subsection{移不变系统}
+与时不变系统对应，在离散系统当中叫移不变系统。因为离散系统已经没有了时间的变量，而是用一个序号作为自变量，因此叫作移（动）不变系统。
+
+需要满足下面的要求：
+
+如果$y[n]=H\{x[n]\}$，则$y[n+m]=H\{x[n+m]\}$。
+
+\section{线性系统对激励的响应}
+\begin{quote}
+	我们也把输入信号叫作激励，把输出信号叫作响应。
+\end{quote}
+\subsection{离散系统对激励的响应}
+\subsubsection{离散$\delta$信号}
+\begin{equation}
+	\delta[n]=
+	\left\{
+	\begin{aligned}
+		1  \qquad & 当n=0     \\
+		0  \qquad & 当n\neq 0
+	\end{aligned}
+	\right.
+\end{equation}
+
+在模拟领域，一般用信号或者函数的名称；而在数字领域，一般称离散信号或者序列，所以上面表达的信号叫作离散冲激序列。
+\subsubsection{离散卷积}
+任何一个离散信号$x[n]$都可以表达成如下形式：
+\begin{equation}
+	x[n]=\sum\limits_{k=-\infty}^\infty\ x[k]\cdot \delta[n-k]
+\end{equation}
+
+如果一个离散系统$H{\cdot}$是一个线性系统，根据其性质，则可得：
+\begin{equation}
+	\begin{aligned}
+		  & y[n]=H\{x[n]\}                                             \\
+		= & H\{\sum\limits_{k=-\infty}^\infty\ x[k]\cdot \delta[n-k]\} \\
+		= & \sum\limits_{k=-\infty}^\infty\ x[k]\cdot H\{\delta[n-k]\}
+	\end{aligned}
+\end{equation}
+
+因为$n$才是“自变量”，所以这里把$x[k]$视作常数。
+
+我么做如下定义：
+\begin{equation}
+	h[n]=H\{\delta[n]\}
+\end{equation}
+
+如果该系统进一步是一个移不变系统，则有：
+\begin{equation}
+	h[n-k]=H\{\delta[n-k]\}
+\end{equation}
+
+代入到前面的公式得到：
+\begin{equation}
+	y[n]=\sum\limits_{k=-\infty}^\infty\ x[k]\cdot h[n-k]
+\end{equation}
+
+这个公式就是著名的离散卷积，也记作：
+\begin{equation}
+	y[n]=x[n]*h[n]
+\end{equation}
+
+$h[n]$叫作系统的冲激响应，反映了系统的特性，而系统的输出是输入和冲激响应的卷积。
+
+\begin{quote}
+	移不变系统并不是反折不变的！！！！
+
+	\begin{align*}
+		\because   & \quad \delta[-n]=\delta[n]                     \\
+		\therefore & \quad H\{\delta[k-n]\}=H\{\delta[n-k]\}=h[n-k] \\
+		\because   & \quad h[k-n]\neq h[n-k]                        \\
+		\therefore & \quad H\{\delta[k-n]\}\neq h[k-n]
+	\end{align*}
+\end{quote}
+\subsubsection{因果系统}
+因果系统就是，如果没有信号输入，则系统就没有输出，即：
+\begin{equation}
+	h[n]=0\qquad (n< 0)
+\end{equation}
+
+因此，如果是因果系统，$n$时刻系统的输出信号只与该时刻之前的输入信号有关，而和该时刻之后的输入信号无关，因此，求和的上限可以取为$n$：
+\begin{equation}
+	y[n]=\sum\limits_{k-\infty}^\infty\ x[k]\cdot h[n-k]
+\end{equation}
+
+在离散卷积的推导过程当中，用到了线性系统和移不变的条件，这是卷积成立的前提。
+
+\subsection{连续系统对激励的响应}
+\subsubsection{连续$\delta$信号}
+\begin{equation}
+	\left\{
+	\begin{aligned}
+		\sum_{-\infty}^{\infty}\ \delta(t)\ dt=1 \\
+		\delta(t)=0\qquad t\neq 0
+	\end{aligned}
+	\right.
+\end{equation}
+也就是说，冲激函数零点的值为无穷，除此之外其他位置的值都是零，而在无穷时间上的积分为单位$1$。
+\subsubsection{连续卷积}
+\begin{align*}
+	  & \sum\limits_{-\infty}^{\infty}\ x(t)\cdot \delta(t-t_0)\ dt   \\
+	= & \sum\limits_{-\infty}^{\infty}\ x(t_0)\cdot \delta(t-t_0)\ dt \\
+	= & x(t_0)
+\end{align*}
+
+$\delta(t-t_0)$是位于$t_0$时刻的一个冲激，信号$x(t)$与之相乘并积分后，得到信号在$t_0$的值。
+
+把上式做变量替换，$t=\tau$，$t_0=t$，成为：
+\begin{equation}
+	x(t)=\int\limits_{-\infty}^\infty\ x(\tau)\cdot \delta(t-\tau)\ d\tau
+\end{equation}
+
+积分也就是求和的意思。也就是说，任何一个函数$x(t)$，都可以写成一系列不同时移的冲激函数$\delta(t-\tau)$的加权和的形式。
+
+\begin{align*}
+	\because   & h(t)=H\{x(t)\}                                                   \\
+	\therefore & y(t)=H\{x(t)\}                                                   \\
+	           & =H\{\int_{-\infty}^\infty\ x(\tau)\cdot \delta(t-\tau)\ d\tau \} \\
+	           & =\int_{-\infty}^\infty\ x(\tau)\cdot H\{\delta(t-\tau)\}\ d\tau  \\
+	           & =\int_{-\infty}^\infty\ x(\tau)\cdot h(t-\tau)\ d\tau
+\end{align*}
+
+这个积分就是著名的卷积公式，也记作：
+\begin{equation}
+	y(t)=x(t)*h(t)
+\end{equation}
+\subsubsection{因果系统}
+因果系统就是如果没有信号输入，系统就没有输出，也就是：
+\begin{equation}
+	h(t)=0\qquad t<0
+\end{equation}
+
+因此，如果是因果系统，$t$时刻系统的输出信号只与该时刻前的输入信号有关，
+而和该时刻之后的输入信号无关，因此，积分的上限可以取为$t$：
+\begin{equation}
+	y(t)=\int_{-\infty}^t\ x(\tau)\cdot h(t-\tau)\ d\tau
+\end{equation}
+
+有了输入信号和冲激响应，线性系统的输出就被完全决定了。线性系统对冲激信号的响应，完全反映了系统的特性。
+
+\begin{quote}
+	\begin{enumerate}
+		\item $y(t)$是$t$时刻系统的输出信号；
+		\item 它是由$t$时刻之前的输入信号的无数的小冲激脉冲引起的，因此积分上限为$t$；
+		\item 积分变量用$\tau$表示；
+		\item 时刻$\tau$处的一个冲激脉冲，强度为$x(\tau)\ d\tau$；
+		\item 它引起的系统的输出为$x(\tau)\ d\tau\cdot h(t-\tau)$。$t-\tau$的意思是，把冲激响应的波形右移了$\tau$；
+		\item 积分起来就行了。
+	\end{enumerate}
+\end{quote}
+\section{卷积的性质}
+\subsection{交换率}
+\begin{align*}
+	x_1(t)*x_2(t) & =x_2(t)*x_1(t) \\
+	x_1[n]*x_2[n] & =x_2[n]*x_1[n]
+\end{align*}
+
+因为：
+\begin{equation}
+	x_1(t)*x_2(t)=\int_{-\infty}^\infty\ x_1(\tau)\cdot x_2(t-\tau)\ d\tau
+\end{equation}
+
+把积分变量$\tau$更换为$t-\lambda$，则：
+\begin{equation}
+	x_1(t)*x_2(t)=\int_{-\infty}^\infty\ x_2(\lambda)\cdot x_1(t-\lambda)\ d\lambda=x_2(t)*x_1(t)
+\end{equation}
+\subsection{分配率}
+\begin{align*}
+	x_1(t)*[x_2(t)+x_3(t)]=x_1(t)*x_2(t)+x_1(t)*x_3(t) \\
+	x_1[n]*[x_2[n]+x_3[n]]=x_1[n]*x_2[n]+x_1[n]*x_3[n]
+\end{align*}
+\subsection{结合率}
+\begin{align*}
+	\left[x_{1}(t)*x_{2}(t)\right]*x_{3}(t)=x_{1}(t)*\left[x_{2}(t)*x_{3}(t)\right] \\
+	\left[x_{1}[n]*x_{2}[n]\right]*x_{3}[n]=x_{1}[n]*\left[x_{2}[n]*x_{3}[n]\right]
+\end{align*}
+\subsection{与冲激函数卷积}
+\begin{align*}
+	\delta(t)*x(t)=x(t)*\delta(t)=x(t) \\
+	\delta[n]*x[n]=x[n]*\delta[n]=x[n]
+\end{align*}
+一个函数与冲激函数的卷积是其本身。
